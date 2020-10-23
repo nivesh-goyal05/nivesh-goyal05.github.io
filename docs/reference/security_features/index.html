@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="canonical" href="https://www.niveshopstree.tk/docs/reference/security_features/">
+
+    <title>
+        
+        Security Features | Devtron Labs tutorial
+        
+    </title>
+
+    
+    <link href="https://www.niveshopstree.tk/css/fontawesome.min.css" rel="stylesheet">
+
+
+    
+    
+    <link rel="stylesheet" href="https://www.niveshopstree.tk/css/main.css">
+
+
+    
+    <link rel="stylesheet" href="https://www.niveshopstree.tk/css/ace.min.css">
+
+    
+    
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                Devtron Labs tutorial
+            </a>
+        </div>
+        
+    </div>
+</nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse">
+            <form class="form-inline my-2 my-lg-0 searchbox">
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search">
+            </form>
+         <ul class="navbar-nav flex-column pt-3">
+    <li data-nav-id="/docs/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/"><h6>  </h6></a>
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docs/reference/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/"><h6>Reference</h6></a>
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docs/reference/creating_application/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/"><h6>Creating Application</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/docs/reference/creating_application/git_material/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/creating_application/git_material/" class="nav-link p-0">
+                    Git Material
+                </a>
+        </li>
+        <li data-nav-id="/docs/reference/creating_application/docker_configuration/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/creating_application/docker_configuration/" class="nav-link p-0">
+                    Docker Build Configuration
+                </a>
+        </li>
+        <li data-nav-id="/docs/reference/creating_application/deployment_template/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/creating_application/deployment_template/" class="nav-link p-0">
+                    Deployment Template
+                </a>
+        </li>
+    <li data-nav-id="/docs/reference/creating_application/workflows/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/workflows/"><h6>Workflow</h6></a>
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docs/reference/creating_application/workflows/ci_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/workflows/ci_pipelines/"><h6>CI Pipeline</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/creating_application/workflows/cd_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/workflows/cd_pipelines/"><h6>CD Pipeline</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/reference/creating_application/config_maps/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/config_maps/"><h6>Config Maps</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/creating_application/secrets/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/secrets/"><h6>Secrets</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/creating_application/environment_overrides/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/creating_application/environment_overrides/"><h6>Environment Overrides</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/reference/cloning_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/cloning_applications/"><h6>Cloning Application</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/deploying_applications/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/deploying_applications/"><h6>Deploying Application</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/docs/reference/deploying_applications/triggering_ci/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/deploying_applications/triggering_ci/" class="nav-link p-0">
+                    Triggering CI
+                </a>
+        </li>
+        <li data-nav-id="/docs/reference/deploying_applications/triggering_cd/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/deploying_applications/triggering_cd/" class="nav-link p-0">
+                    Triggering CD
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/reference/deploy_chart/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/deploy_chart/"><h6>Deploy Chart</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/docs/reference/deploy_chart/overview/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/deploy_chart/overview/" class="nav-link p-0">
+                    Overview Of Charts
+                </a>
+        </li>
+    <li data-nav-id="/docs/reference/deploy_chart/examples/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/deploy_chart/examples/"><h6>Examples</h6></a>
+        <ul class="list-unstyled ml-2">
+        <li data-nav-id="/docs/reference/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-link p-0">
+                    Deploying Mysql Helm Chart
+                </a>
+        </li>
+        <li data-nav-id="/docs/reference/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/docs/reference/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-link p-0">
+                    Deploying MongoDB Helm Chart
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/reference/debugging_deployments_and_monitoring/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/debugging_deployments_and_monitoring/"><h6> Debugging Deployment And Monitoring</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/namespaces_and_environments/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/namespaces_and_environments/"><h6>Namespaces And Environments</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/security_features/" class="nav-item my-1 parent active
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/security_features/"><h6>Security Features</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/deleting_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/deleting_applications/"><h6>Deleting Application</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/global_configurations/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/global_configurations/"><h6>Global Configurations</h6></a>
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docs/reference/global_configurations/manage_notification/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/global_configurations/manage_notification/"><h6>Manage Notification</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/global_configurations/user_access/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/global_configurations/user_access/"><h6>User Access</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/reference/use_cases/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/use_cases/"><h6>Use Cases</h6></a>
+        <ul class="list-unstyled ml-2">
+    <li data-nav-id="/docs/reference/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/"><h6>Devtron Generic Helm Chart To Run Cron Job Or One Time Job</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/use_cases/connect_spring_boot_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/use_cases/connect_spring_boot_with_mysql_database/"><h6>Connect SpringBoot with Mysql Database</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/use_cases/connect_expressjs_with_mongodb_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/use_cases/connect_expressjs_with_mongodb_database/"><h6>Connect Expressjs With Mongodb Database</h6></a>
+    </li>
+    <li data-nav-id="/docs/reference/use_cases/connect_django_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/docs/reference/use_cases/connect_django_with_mysql_database/"><h6>Connect Django With Mysql Database</h6></a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+        <li data-nav-id="/docs/hidden/" class="nav-item my-1">
+                
+                 <a href="/docs/hidden/" class="nav-link p-0">
+                    
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#scanning">Scanning</a></li>
+    <li><a href="#policy">Policy</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#security-policies">Security Policies:</a></li>
+    <li><a href="#configure-global-policy">Configure Global Policy</a></li>
+    <li><a href="#configure-cluster-security-policy">Configure Cluster Security Policy</a></li>
+    <li><a href="#configure-environment-security-policy">Configure Environment Security Policy</a></li>
+    <li><a href="#configure-application-security-policy">Configure Application Security Policy</a></li>
+    <li><a href="#check-cve-policy">Check CVE Policy</a></li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<h1>Security Features</h1>
+
+<p> </p>
+<p>Devtron’s tool is also providing you <code>Security Features</code> to identify the vulnerabilities inside your code and to protect your code from external attacks.</p>
+<p>The system will scan your code and inform you if there are any Vulnerabilities present in your code. Also to make this feature more flexible to use, we have added a capability using which you can whitelist or block any vulnerability, and your code will be scanned considering the defined whitelist or blocked vulnerabilities.</p>
+<p>Remember, we discussed the <code>Scan for vulnerabilities</code> option in the CI pipeline. You can enable this feature from the CI Pipeline page. The system will scan your code and will show you all vulnerabilities present in your code.</p>
+<p>We have created <code>Security features</code> to identify the vulnerabilities inside your code and to protect you from external attacks.</p>
+<p>This Security Feature has two processes:</p>
+<ol>
+<li>
+<p>Scanning</p>
+</li>
+<li>
+<p>Policy</p>
+</li>
+</ol>
+<h2 id="scanning">Scanning</h2>
+<p>This process starts executing after the successful execution of the CI pipeline and before the deployment(CD) process starts.</p>
+<p>It scans your code to find any potential threat and shows you the list of vulnerabilities as an output of the CI pipeline if it finds any.</p>
+<p>We will discuss later how you will see the list of your found vulnerabilities.</p>
+<p> </p>
+<h2 id="policy">Policy</h2>
+<p>Vulnerabilities have different levels like Critical, Moderate, and Low. Users can define Policy according to the level of vulnerability. Users can also block the vulnerability or allow(whitelist) the vulnerability for their code.</p>
+<p>If any vulnerability is found which is blocked by the user, then it will not deploy the application. And if it finds any vulnerability which is whitelisted by the user, then the build image can be deployed.</p>
+<p>The user gets informed in both cases if it finds any vulnerability or doesn&rsquo;t find any.</p>
+<p> </p>
+<p><strong>How to Check Vulnerability</strong></p>
+<p>You can find the Vulnerabilities <code>Build History</code> Page if you have enabled the <code>Scan for vulnerabilities</code> option.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature1.png" height="380px"/> 
+</figure>
+
+<p> </p>
+<p>Your Application-&gt; Build History-&gt; Select pipeline-&gt; Go to Security  Tab.</p>
+<p>Here you can see all the vulnerabilities found in the build image.</p>
+<p>Every vulnerability has <code>CVE ID</code>, <code>Severity Level</code>, Package, Current Version, and Fixed In Version.</p>
+<p><strong>CVE ID</strong>- Common vulnerability ID</p>
+<p><strong>Severity Level</strong> informs you about the severity of the vulnerability, it is defined as Critical, Medium, and Low.</p>
+<p>The <strong>Package</strong> column contains some meta-data of vulnerability.</p>
+<p>The <strong>Current Version</strong> is the version of that vulnerability</p>
+<p><strong>Fixed In Version</strong> column contains version name if it has been fixed in any version, else it remains blank</p>
+<p> </p>
+<p><strong>Find Vulnerabilities on the Trigger Page</strong></p>
+<p> </p>
+<p>You can find Vulnerabilities on the <code>Trigger</code> page also. Image having vulnerabilities will be marked as <code>Security Issues Found</code> and you won’t be able to select the image to deploy it.</p>
+<p>You can see details of these vulnerabilities by expanding the <code>Show Source Info</code>.</p>
+<p>See the below image.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature2.png" height="420px"/> 
+</figure>
+
+<p> </p>
+<p>Click on the <code>Show Source Info</code> option. A window will be expanded with two options- Changes and Security. Click on the Security tab to view details about the vulnerabilities in the code.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature3.png" height="380px"/> 
+</figure>
+
+<p><strong>Find Vulnerabilities on the App Details Page</strong></p>
+<p>You can find Vulnerabilities on the <code>App Details</code> page too. Here we are displaying the total number of vulnerabilities found in the code and their Severity Level wise segregation.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature4.png" height="270px"/> 
+</figure>
+
+<p> </p>
+<h2 id="security">Security</h2>
+<p>You can check Vulnerabilities for all your applications in one place. On the Home page, there is an option named as <code>Security</code>. Here, you can see a list of applications under  the <code>Security Scan</code> tab. Here all the applications are listed which have the <code>Scan for Vulnerabilities</code> feature enabled. You can see the vulnerability count along with the Severity Level for all your applications.</p>
+<p><strong>Note:-</strong></p>
+<p>It displays the “Vulnerability count and Severity Level” on a priority basis. And critical level has the highest priority, so it displays the critical level vulnerabilities and there counts if any application is having critical Vulnerability in it.</p>
+<p>You can directly <code>Search</code> your application  using the Search bar  or you can <code>filter out</code> your requirement  according to Severity, Clusters, and Environment.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature5.png" height="380px"/> 
+</figure>
+
+<p> </p>
+<p>Now if you click on the severity level of vulnerability it will show you the list of all vulnerabilities along with other details.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature6.png" height="380px"/> 
+</figure>
+
+<p> </p>
+<h2 id="security-policies">Security Policies:</h2>
+<p>Users can define Security policies for their vulnerabilities under <code>Security Policies</code> Tab.</p>
+<p>Home Page-&gt; Security - &gt; Security Policies</p>
+<p>Policies can be defined to different levels-</p>
+<ul>
+<li>
+<p>Global</p>
+</li>
+<li>
+<p>Cluster</p>
+</li>
+<li>
+<p>Environment</p>
+</li>
+<li>
+<p>Application</p>
+</li>
+</ul>
+<p><strong>Note:-</strong></p>
+<p>Policies work in hierarchical order.</p>
+<p>Order to be followed- First Global and second Cluster and so on as you can see the order of the options</p>
+<p> </p>
+<figure>
+    <img src="./security-feature7.png" height="380px"/> 
+</figure>
+
+<p> </p>
+<p><strong>Some examples of how policies can be defined</strong></p>
+<p>Users can block all the critical vulnerabilities and allow the moderate and low vulnerabilities or Users can block all vulnerabilities or users can block all vulnerabilities for one application and can block only Critical vulnerabilities for other applications.</p>
+<h2 id="configure-global-policy">Configure Global Policy</h2>
+<p>To configure these policies, click on the drop-down option of the severity levels and select Block or Allow.</p>
+<p> </p>
+<figure>
+    <img src="./security-feature8.png" height="310px"/> 
+</figure>
+
+<p> </p>
+<h2 id="configure-cluster-security-policy">Configure Cluster Security Policy</h2>
+<p>In the Global Security Policies, there are only two options available- Block and Allow. But in other options, we have an extra option named <code>Inherit</code>.</p>
+<p>As the name itself gives you an idea about this option, it fetches the policy of its upper-level options, if we choose to inherit in the drop-down.</p>
+<p>Example-if you block critical severity levels in Global, then critical levels will be blocked in Cluster Security Policy. In case we change critical policy globally and allow it there, then it will be allowed in Cluster Security Policies too. But you can change these policies explicitly.</p>
+<p>If you want to block Critical Vulnerabilities in Global Security Policies but want to allow them in some clusters, then select your cluster and change the critical drop-down to allow. It will not affect the policy of other clusters and global also.</p>
+<h2 id="configure-environment-security-policy">Configure Environment Security Policy</h2>
+<p>Again we have three options to define a policy- Block, Allow, and Inherit.</p>
+<p>Environment Security Policy inherits the policy from Cluster Security Policy. Each level inherits the policy of its upper level.</p>
+<p>Select any environment here, you will find it is inheriting the policy of Cluster.</p>
+<p>Example- If you have blocked critical level vulnerabilities in Global Security Policy but allowed them in Cluster Security Policy, then Environment Security Policy will inherit the policy of cluster not global, Hence critical level vulnerabilities will be allowed in the Environment Security Policy.</p>
+<p>Though, You can change the policy explicitly.</p>
+<h2 id="configure-application-security-policy">Configure Application Security Policy</h2>
+<p>The same thing goes with the <code>Application Security Policy</code>. But in Application, the policy is set with the combination of <code>Environment</code> option and <code>Application</code> option. If you change the policy in a dev environment that it will apply to all the applications which are in the <code>dev</code> environment.</p>
+<h2 id="check-cve-policy">Check CVE Policy</h2>
+<p>Here is the last option <code>Check CVE Policy</code>, If you want to configure a security policy specific to any Vulnerability, you can use this option.</p>
+<p>Click on this option, it will show you a search bar, copy any CVE ID or vulnerability ID, and click on <code>Search</code>. It will display the details regarding that CVE ID and you can configure the policy to that particular CVE ID.</p>
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class ="d-inline-flex w-100 view overlay mt-5 " >
+    
+        <div class=" overflow-hidden pr-3 w-50 bg-white footer__border footer__border--m-24" >
+              <div class ="d-inline-flex w-100"><a class="footer__left-arrow-icon " href="/docs/reference/namespaces_and_environments/" ><i class="fas fa-arrow-left "></i></a>
+                <div class="footer__align-left">
+                    <div class="footer__previous-page text-black-50  text-right " >Previous</div>
+
+                    <div class="text-right "><a class=" d-inline-block footer__text-hover "  href="/docs/reference/namespaces_and_environments/" title="Namespaces And Environments">Namespaces And Environments</a>
+                            </div>
+             </div>
+        </div>
+   </div>
+
+
+   <div class=" overflow-hidden pl-3 w-50  bg-white footer__border" >
+             <div class ="d-inline-flex w-100" >
+                      <div class="text-left">
+                            <div class="text-black-50 footer__previous-page" >Next</div>
+                            <div><a class="d-inline-block footer__text-hover "  href="/docs/reference/deleting_applications/" title="Deleting Application">Deleting Application</a>
+                                </div>
+                        </div><a href="/docs/reference/deleting_applications/"  class="text-right footer__right-arrow-icon" ><i  class="fas fa-arrow-right "></i></a>
+                          </div>
+</div>
+ </div> 
+
+</body>
+
+</html>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="https://www.niveshopstree.tk/lib/jquery.min.js"></script> 
+<script src="https://www.niveshopstree.tk/lib/popper.min.js"></script> 
+
+<script src="https://www.niveshopstree.tk/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "https:\/\/www.niveshopstree.tk\/";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>
