@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deploy Chart on Devtron Labs tutorial</title>
-    <link>nivesh-goyal05.github.io/docs/reference/deploy_chart/</link>
+    <link>/docs/reference/deploy_chart/</link>
     <description>Recent content in Deploy Chart on Devtron Labs tutorial</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="nivesh-goyal05.github.io/docs/reference/deploy_chart/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/docs/reference/deploy_chart/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Overview Of Charts</title>
-      <link>nivesh-goyal05.github.io/docs/reference/deploy_chart/overview/</link>
+      <link>/docs/reference/deploy_chart/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>nivesh-goyal05.github.io/docs/reference/deploy_chart/overview/</guid>
+      <guid>/docs/reference/deploy_chart/overview/</guid>
       <description>Deploying Charts Charts can be deployed individually or by creating a group of Charts.
 Both methods are mentioned in the given document.
 Deploying Chart     Select Discover and then select the chart that you want to use

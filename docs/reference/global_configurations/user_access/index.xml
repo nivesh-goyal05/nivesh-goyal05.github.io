@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>User Access on Devtron Labs tutorial</title>
-    <link>nivesh-goyal05.github.io/docs/reference/global_configurations/user_access/</link>
+    <link>/docs/reference/global_configurations/user_access/</link>
     <description>Recent content in User Access on Devtron Labs tutorial</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="nivesh-goyal05.github.io/docs/reference/global_configurations/user_access/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/docs/reference/global_configurations/user_access/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

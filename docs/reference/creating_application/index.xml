@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Creating Application on Devtron Labs tutorial</title>
-    <link>nivesh-goyal05.github.io/docs/reference/creating_application/</link>
+    <link>/docs/reference/creating_application/</link>
     <description>Recent content in Creating Application on Devtron Labs tutorial</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="nivesh-goyal05.github.io/docs/reference/creating_application/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/docs/reference/creating_application/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Material</title>
-      <link>nivesh-goyal05.github.io/docs/reference/creating_application/git_material/</link>
+      <link>/docs/reference/creating_application/git_material/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>nivesh-goyal05.github.io/docs/reference/creating_application/git_material/</guid>
+      <guid>/docs/reference/creating_application/git_material/</guid>
       <description>Git material is used to pull the application source code during the CI step. Inside git material when you click on “Add material” you will see three options as shown below:
   Select Provider
   Git Repo URL
@@ -22,10 +22,10 @@
     
     <item>
       <title>Docker Build Configuration</title>
-      <link>nivesh-goyal05.github.io/docs/reference/creating_application/docker_configuration/</link>
+      <link>/docs/reference/creating_application/docker_configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>nivesh-goyal05.github.io/docs/reference/creating_application/docker_configuration/</guid>
+      <guid>/docs/reference/creating_application/docker_configuration/</guid>
       <description>In the previous step, we discussed git configurations. In this section, we will provide information on the docker build config.
 Docker build configuration is used to create and push docker images in the docker registry for your application. You will provide docker related information to build and push docker images in this step.
 Only one docker image can be created even for multi-git repository application as explained in the previous step.</description>
@@ -33,10 +33,10 @@ Only one docker image can be created even for multi-git repository application a
     
     <item>
       <title>Deployment Template</title>
-      <link>nivesh-goyal05.github.io/docs/reference/creating_application/deployment_template/</link>
+      <link>/docs/reference/creating_application/deployment_template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>nivesh-goyal05.github.io/docs/reference/creating_application/deployment_template/</guid>
+      <guid>/docs/reference/creating_application/deployment_template/</guid>
       <description>Deployment configuration is the Manifest for the application, it defines the runtime behavior of the application. You can define application behavior by providing information in three sections:
   Chart Version
   Yaml file
