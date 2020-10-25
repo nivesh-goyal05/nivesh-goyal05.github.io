@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="canonical" href="/creating_application/docker_configuration/">
+
+    <title>
+        
+        Docker Build Configuration | Devtron Labs tutorial
+        
+    </title>
+
+    
+    <link href="/css/fontawesome.min.css" rel="stylesheet">
+
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    
+    <link rel="stylesheet" href="/css/ace.min.css">
+
+    
+    
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                Devtron Labs tutorial
+            </a>
+        </div>
+        
+    </div>
+</nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse" style=" overflow-y : scroll; height: 600px; margin-right: -20px; overflow-x: hidden;">
+            <form class="form-inline my-2 my-lg-0 searchbox" >
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search" >
+            </form>
+        <h6 class="pt-3" style="color: rgba(0,0,0,.5)">Refrence</h6>
+         <ul class="navbar-nav flex-column " style="margin-left: 10px;">
+    <li data-nav-id="/creating_application/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/"><h6>Creating Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/creating_application/git_material/" class="nav-item my-1">
+                
+                 <a href="/creating_application/git_material/" class="nav-link p-0" >
+                    Git Material
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/docker_configuration/" class="nav-item my-1 active">
+                
+                 <a href="/creating_application/docker_configuration/" class="nav-link p-0" >
+                    Docker Build Configuration
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/deployment_template/" class="nav-item my-1">
+                
+                 <a href="/creating_application/deployment_template/" class="nav-link p-0" >
+                    Deployment Template
+                </a>
+        </li>
+    <li data-nav-id="/creating_application/workflows/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/"><h6>Workflow</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/creating_application/workflows/ci_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/ci_pipelines/"><h6>CI Pipeline</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/workflows/cd_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/cd_pipelines/"><h6>CD Pipeline</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/creating_application/config_maps/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/config_maps/"><h6>Config Maps</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/secrets/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/secrets/"><h6>Secrets</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/environment_overrides/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/environment_overrides/"><h6>Environment Overrides</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cloning_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/cloning_applications/"><h6>Cloning Application</h6></a>
+    </li>
+    <li data-nav-id="/deploying_applications/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploying_applications/"><h6>Deploying Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploying_applications/triggering_ci/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_ci/" class="nav-link p-0" >
+                    Triggering CI
+                </a>
+        </li>
+        <li data-nav-id="/deploying_applications/triggering_cd/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_cd/" class="nav-link p-0" >
+                    Triggering CD
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/deploy_chart/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/"><h6>Deploy Chart</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/overview/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/overview/" class="nav-link p-0" >
+                    Overview Of Charts
+                </a>
+        </li>
+    <li data-nav-id="/deploy_chart/examples/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/examples/"><h6>Examples</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-link p-0" >
+                    Deploying Mysql Helm Chart
+                </a>
+        </li>
+        <li data-nav-id="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-link p-0" >
+                    Deploying MongoDB Helm Chart
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debugging_deployments_and_monitoring/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/debugging_deployments_and_monitoring/"><h6> Debugging Deployment And Monitoring</h6></a>
+    </li>
+    <li data-nav-id="/namespaces_and_environments/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/namespaces_and_environments/"><h6>Namespaces And Environments</h6></a>
+    </li>
+    <li data-nav-id="/security_features/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/security_features/"><h6>Security Features</h6></a>
+    </li>
+    <li data-nav-id="/deleting_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/deleting_applications/"><h6>Deleting Application</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/"><h6>Global Configurations</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/global_configurations/git_accounts/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/git_accounts/"><h6>Git Accounts</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/docker_registries/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/docker_registries/"><h6>Docker Registries</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/cluster_and_environment/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/cluster_and_environment/"><h6>Cluster And Environments</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/projects/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/projects/"><h6>Projects</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/user_access/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/user_access/"><h6>User Access</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/manage_notification/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/manage_notification/"><h6>Manage Notification</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/use_cases/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/"><h6>Use Cases</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/"><h6>Devtron Generic Helm Chart To Run Cron Job Or One Time Job</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_spring_boot_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_spring_boot_with_mysql_database/"><h6>Connect SpringBoot with Mysql Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_expressjs_with_mongodb_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_expressjs_with_mongodb_database/"><h6>Connect Expressjs With Mongodb Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_django_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_django_with_mysql_database/"><h6>Connect Django With Mysql Database</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/"><h6> </h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/docs/hidden/" class="nav-item my-1">
+                
+                 <a href="/docs/hidden/" class="nav-link p-0" >
+                    
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-repository">1. Repository</a></li>
+    <li><a href="#2-docker-file-path">2. Docker file path</a></li>
+    <li><a href="#3-docker-registry">3. Docker Registry</a></li>
+    <li><a href="#4-docker-repository">4. Docker Repository</a></li>
+    <li><a href="#5-docker-build-arguments">5. Docker build arguments</a></li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<h1>Docker Build Configuration</h1>
+
+<p>In the previous step, we discussed git configurations. In this section, we will provide information on the docker build config.</p>
+<p>Docker build configuration is used to create and push docker images in the docker registry for your application. You will provide docker related information to build and push docker images in this step.</p>
+<p><em>Only one docker image can be created even for multi-git repository application as explained in the <a href="/creating_application/git_material/">previous step</a>.</em></p>
+<p>  </p>
+<p><img src="../../move2.gif" alt="Docker Configuration" title="Docker Build Configurations"></p>
+<p>  </p>
+<p>Here you can see, 5 options are present to configure your <strong>docker build</strong>.</p>
+<ol>
+<li>
+<p>Repository</p>
+</li>
+<li>
+<p>Docker file path</p>
+</li>
+<li>
+<p>Docker Registry</p>
+</li>
+<li>
+<p>Docker Repository</p>
+</li>
+<li>
+<p>Docker build arguments</p>
+<ul>
+<li>
+<p>Key</p>
+</li>
+<li>
+<p>Value</p>
+</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Repository</code></td>
+<td>Provide the checkout path of the repository in this column, which you had defined earlier in git configuration details</td>
+</tr>
+<tr>
+<td><code>Docker File Path</code></td>
+<td>Provide a relative path for your docker file. Dockerfile should be present on this path.</td>
+</tr>
+</tbody>
+</table>
+<p>|<code>Docker Registry</code>|Select the docker registry you wish to use, which will be used to <a href="/global_configurations/">store docker images</a>.|
+|<code>Docker Repository</code>|Name of your docker repository that will store a collection of related images. Every image is stored with a new tag version.|
+|<code>Key-value</code>|The key parameter and the value for a given key for your docker build. This is Optional. (this can be overridden at <a href="/deploying_applications/triggering_ci/">CI step</a> later)|</p>
+<h2 id="1-repository">1. Repository</h2>
+<p>Provide the checkout path of the repository in this column, which you defined earlier in git configuration details. In the case of multi-git, select the checkout path configured for the repository containing Dockerfile to be used for image creation.</p>
+<h2 id="2-docker-file-path">2. Docker file path</h2>
+<p>Inside the <strong>Docker file path option</strong>,  provide a relative path for your docker file. The default docker file name is <strong>Dockerfile</strong> but if you are using a custom name for your Dockerfile like <strong>xyz_dockerfile</strong>, then you have to provide that custom name.</p>
+<p>If your docker file is not at the root of the repository, then it should contain a relative path to this file. The path will be searched inside the checkout path selected in the previous step.</p>
+<h2 id="3-docker-registry">3. Docker Registry</h2>
+<p>Select the docker registry you want to use to store docker images. You can have <strong>ECR (Elastic Container Registry)</strong>, DockerHub, etc, and many other registries as your docker registry.</p>
+<p>Adding a registry in the drop-down is configurable. To get a drop-down of these registries into the docker registry option, you have to add the configuration and credentials in the <a href="/global_configurations/">Global Configuration</a>.</p>
+<h2 id="4-docker-repository">4. Docker Repository</h2>
+<p>You have to provide the docker Registry(ECR) bucket name under the <strong>Docker Repository</strong> option, but this is optional. If you provide the name of your repository we will use that name but if you don’t provide a name then the docker repository is automatically created and used.</p>
+<h2 id="5-docker-build-arguments">5. Docker build arguments</h2>
+<p>Many times you use some arguments when you build your Dockerfile. Here you can provide those arguments in key-value format. You can provide one or more arguments and these arguments are optional. Read about the <a href="https://docs.docker.com/engine/reference/commandline/build/#options">docker command line and arguments</a>.</p>
+<p>Once all the configuration is done, click on <code>Save Configuration</code> to save the Docker Build Configuration.</p>
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class ="d-inline-flex w-100 view overlay mt-5 " >
+    
+        <div class=" overflow-hidden pr-3 w-50 bg-white footer__border footer__border--m-24" >
+              <div class ="d-inline-flex w-100"><a class="footer__left-arrow-icon " href="/creating_application/git_material/" ><i class="fas fa-arrow-left "></i></a>
+                <div class="footer__align-left">
+                    <div class="footer__previous-page text-black-50  text-right " >Previous</div>
+
+                    <div class="text-right "><a class=" d-inline-block footer__text-hover "  href="/creating_application/git_material/" title="Git Material">Git Material</a>
+                            </div>
+             </div>
+        </div>
+   </div>
+
+
+   <div class=" overflow-hidden pl-3 w-50  bg-white footer__border" >
+             <div class ="d-inline-flex w-100" >
+                      <div class="text-left">
+                            <div class="text-black-50 footer__previous-page" >Next</div>
+                            <div><a class="d-inline-block footer__text-hover "  href="/creating_application/deployment_template/" title="Deployment Template">Deployment Template</a>
+                                </div>
+                        </div><a href="/creating_application/deployment_template/"  class="text-right footer__right-arrow-icon" ><i  class="fas fa-arrow-right "></i></a>
+                          </div>
+</div>
+ </div> 
+
+</body>
+
+</html>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="/lib/jquery.min.js"></script> 
+<script src="/lib/popper.min.js"></script> 
+
+<script src="/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>

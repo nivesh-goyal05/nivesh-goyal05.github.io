@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Material</title>
-      <link>/docs/reference/creating_application/git_material/</link>
+      <link>/creating_application/git_material/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/creating_application/git_material/</guid>
+      <guid>/creating_application/git_material/</guid>
       <description>Git material is used to pull the application source code during the CI step. Inside git material when you click on “Add material” you will see three options as shown below:
   Select Provider
   Git Repo URL
@@ -22,10 +22,10 @@
     
     <item>
       <title>Overview Of Charts</title>
-      <link>/docs/reference/deploy_chart/overview/</link>
+      <link>/deploy_chart/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/deploy_chart/overview/</guid>
+      <guid>/deploy_chart/overview/</guid>
       <description>Deploying Charts Charts can be deployed individually or by creating a group of Charts.
 Both methods are mentioned in the given document.
 Deploying Chart     Select Discover and then select the chart that you want to use
@@ -35,10 +35,10 @@ Click on README.MD to get more idea about the configurations of the chart
     
     <item>
       <title>Triggering CI</title>
-      <link>/docs/reference/deploying_applications/triggering_ci/</link>
+      <link>/deploying_applications/triggering_ci/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/deploying_applications/triggering_ci/</guid>
+      <guid>/deploying_applications/triggering_ci/</guid>
       <description>Triggering CI Pipelines     The CI Pipeline can be triggered by selecting Select Material
 CI Pipelines that are set as Automatic are always triggered as soon as a new commit is made to the git branch they&amp;rsquo;re sensing. However, CI Pipelines can always be manually triggered as and if required.
     Various commits done in the repository can be seen, here along with details like Author, Date etc.</description>
@@ -46,10 +46,10 @@ CI Pipelines that are set as Automatic are always triggered as soon as a new com
     
     <item>
       <title>Docker Build Configuration</title>
-      <link>/docs/reference/creating_application/docker_configuration/</link>
+      <link>/creating_application/docker_configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/creating_application/docker_configuration/</guid>
+      <guid>/creating_application/docker_configuration/</guid>
       <description>In the previous step, we discussed git configurations. In this section, we will provide information on the docker build config.
 Docker build configuration is used to create and push docker images in the docker registry for your application. You will provide docker related information to build and push docker images in this step.
 Only one docker image can be created even for multi-git repository application as explained in the previous step.</description>
@@ -57,10 +57,10 @@ Only one docker image can be created even for multi-git repository application a
     
     <item>
       <title>Triggering CD</title>
-      <link>/docs/reference/deploying_applications/triggering_cd/</link>
+      <link>/deploying_applications/triggering_cd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/deploying_applications/triggering_cd/</guid>
+      <guid>/deploying_applications/triggering_cd/</guid>
       <description>Triggering CD Pipelines     After CI Pipeline is complete, CD Pipeline can be triggered by Clicking on Select Image.
     Select an image to deploy and then Click on Deploy to trigger the CD Pipeline.
 The running images are tagged as Running
@@ -69,10 +69,10 @@ The running images are tagged as Running
     
     <item>
       <title>Deploying Mysql Helm Chart</title>
-      <link>/docs/reference/deploy_chart/examples/deploying_mysql_helm_chart/</link>
+      <link>/deploy_chart/examples/deploying_mysql_helm_chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/deploy_chart/examples/deploying_mysql_helm_chart/</guid>
+      <guid>/deploy_chart/examples/deploying_mysql_helm_chart/</guid>
       <description>Introduction stable/mysql Helm chart bootstraps a single node MySQL deployment on a Kubernetes cluster using the Helm package manager.
     1. Discover the chart from the Chart Store Select the Charts section from the left pane, you will be landed to the Chart Store page. Click on Discover and find stable/mongodb-replicaset Helm Chart.
     2. Configure the Chart After selecting the stable/mySQL Helm chart, click on Deploy</description>
@@ -80,10 +80,10 @@ The running images are tagged as Running
     
     <item>
       <title>Deployment Template</title>
-      <link>/docs/reference/creating_application/deployment_template/</link>
+      <link>/creating_application/deployment_template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/creating_application/deployment_template/</guid>
+      <guid>/creating_application/deployment_template/</guid>
       <description>Deployment configuration is the Manifest for the application, it defines the runtime behavior of the application. You can define application behavior by providing information in three sections:
   Chart Version
   Yaml file
@@ -93,10 +93,10 @@ The running images are tagged as Running
     
     <item>
       <title>Deploying MongoDB Helm Chart</title>
-      <link>/docs/reference/deploy_chart/examples/deploying_mongodb_helm_chart/</link>
+      <link>/deploy_chart/examples/deploying_mongodb_helm_chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/reference/deploy_chart/examples/deploying_mongodb_helm_chart/</guid>
+      <guid>/deploy_chart/examples/deploying_mongodb_helm_chart/</guid>
       <description>Introduction Let&amp;rsquo;s assume that you are building an application which needs mongoDB.
    Deploying applications as Helm Charts is the easiest way to create applications on Devtron.
 This guide will introduce you to how to deploy the mongoDB&amp;rsquo;s Helm chart.

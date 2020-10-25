@@ -3,135 +3,147 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/creating_application/workflows/ci_pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/</loc>
+  </url>
+  
+  <url>
+    <loc>/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/git_accounts/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/git_material/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploy_chart/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploying_applications/triggering_ci/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/workflows/cd_pipelines/</loc>
+  </url>
+  
+  <url>
+    <loc>/cloning_applications/</loc>
+  </url>
+  
+  <url>
+    <loc>/use_cases/connect_spring_boot_with_mysql_database/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/docker_configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/docker_registries/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploy_chart/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploying_applications/triggering_cd/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/cluster_and_environment/</loc>
+  </url>
+  
+  <url>
+    <loc>/use_cases/connect_expressjs_with_mongodb_database/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploying_applications/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploy_chart/examples/deploying_mysql_helm_chart/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/deployment_template/</loc>
+  </url>
+  
+  <url>
+    <loc>/use_cases/connect_django_with_mysql_database/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploy_chart/</loc>
+  </url>
+  
+  <url>
+    <loc>/deploy_chart/examples/deploying_mongodb_helm_chart/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/workflows/</loc>
+  </url>
+  
+  <url>
+    <loc>/debugging_deployments_and_monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/config_maps/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/user_access/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/manage_notification/</loc>
+  </url>
+  
+  <url>
+    <loc>/namespaces_and_environments/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/secrets/</loc>
+  </url>
+  
+  <url>
+    <loc>/creating_application/environment_overrides/</loc>
+  </url>
+  
+  <url>
+    <loc>/security_features/</loc>
+  </url>
+  
+  <url>
+    <loc>/deleting_applications/</loc>
+  </url>
+  
+  <url>
+    <loc>/global_configurations/</loc>
+  </url>
+  
+  <url>
+    <loc>/use_cases/</loc>
+  </url>
+  
+  <url>
     <loc>/docs/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/workflows/ci_pipelines/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/git_material/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/global_configurations/manage_notification/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploy_chart/overview/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploying_applications/triggering_ci/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/workflows/cd_pipelines/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/cloning_applications/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/use_cases/connect_spring_boot_with_mysql_database/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/docker_configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploy_chart/examples/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploying_applications/triggering_cd/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/global_configurations/user_access/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/use_cases/connect_expressjs_with_mongodb_database/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploying_applications/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploy_chart/examples/deploying_mysql_helm_chart/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/deployment_template/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/use_cases/connect_django_with_mysql_database/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploy_chart/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deploy_chart/examples/deploying_mongodb_helm_chart/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/workflows/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/debugging_deployments_and_monitoring/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/config_maps/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/namespaces_and_environments/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/secrets/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/creating_application/environment_overrides/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/security_features/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/deleting_applications/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/global_configurations/</loc>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/use_cases/</loc>
   </url>
   
   <url>

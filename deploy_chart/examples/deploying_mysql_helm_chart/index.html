@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="canonical" href="/deploy_chart/examples/deploying_mysql_helm_chart/">
+
+    <title>
+        
+        Deploying Mysql Helm Chart | Devtron Labs tutorial
+        
+    </title>
+
+    
+    <link href="/css/fontawesome.min.css" rel="stylesheet">
+
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    
+    <link rel="stylesheet" href="/css/ace.min.css">
+
+    
+    
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                Devtron Labs tutorial
+            </a>
+        </div>
+        
+    </div>
+</nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse" style=" overflow-y : scroll; height: 600px; margin-right: -20px; overflow-x: hidden;">
+            <form class="form-inline my-2 my-lg-0 searchbox" >
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search" >
+            </form>
+        <h6 class="pt-3" style="color: rgba(0,0,0,.5)">Refrence</h6>
+         <ul class="navbar-nav flex-column " style="margin-left: 10px;">
+    <li data-nav-id="/creating_application/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/"><h6>Creating Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/creating_application/git_material/" class="nav-item my-1">
+                
+                 <a href="/creating_application/git_material/" class="nav-link p-0" >
+                    Git Material
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/docker_configuration/" class="nav-item my-1">
+                
+                 <a href="/creating_application/docker_configuration/" class="nav-link p-0" >
+                    Docker Build Configuration
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/deployment_template/" class="nav-item my-1">
+                
+                 <a href="/creating_application/deployment_template/" class="nav-link p-0" >
+                    Deployment Template
+                </a>
+        </li>
+    <li data-nav-id="/creating_application/workflows/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/"><h6>Workflow</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/creating_application/workflows/ci_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/ci_pipelines/"><h6>CI Pipeline</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/workflows/cd_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/cd_pipelines/"><h6>CD Pipeline</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/creating_application/config_maps/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/config_maps/"><h6>Config Maps</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/secrets/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/secrets/"><h6>Secrets</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/environment_overrides/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/environment_overrides/"><h6>Environment Overrides</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cloning_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/cloning_applications/"><h6>Cloning Application</h6></a>
+    </li>
+    <li data-nav-id="/deploying_applications/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploying_applications/"><h6>Deploying Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploying_applications/triggering_ci/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_ci/" class="nav-link p-0" >
+                    Triggering CI
+                </a>
+        </li>
+        <li data-nav-id="/deploying_applications/triggering_cd/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_cd/" class="nav-link p-0" >
+                    Triggering CD
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/deploy_chart/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/"><h6>Deploy Chart</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/overview/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/overview/" class="nav-link p-0" >
+                    Overview Of Charts
+                </a>
+        </li>
+    <li data-nav-id="/deploy_chart/examples/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/examples/"><h6>Examples</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-item my-1 active">
+                
+                 <a href="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-link p-0" >
+                    Deploying Mysql Helm Chart
+                </a>
+        </li>
+        <li data-nav-id="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-link p-0" >
+                    Deploying MongoDB Helm Chart
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debugging_deployments_and_monitoring/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/debugging_deployments_and_monitoring/"><h6> Debugging Deployment And Monitoring</h6></a>
+    </li>
+    <li data-nav-id="/namespaces_and_environments/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/namespaces_and_environments/"><h6>Namespaces And Environments</h6></a>
+    </li>
+    <li data-nav-id="/security_features/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/security_features/"><h6>Security Features</h6></a>
+    </li>
+    <li data-nav-id="/deleting_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/deleting_applications/"><h6>Deleting Application</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/"><h6>Global Configurations</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/global_configurations/git_accounts/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/git_accounts/"><h6>Git Accounts</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/docker_registries/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/docker_registries/"><h6>Docker Registries</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/cluster_and_environment/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/cluster_and_environment/"><h6>Cluster And Environments</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/projects/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/projects/"><h6>Projects</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/user_access/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/user_access/"><h6>User Access</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/manage_notification/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/manage_notification/"><h6>Manage Notification</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/use_cases/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/"><h6>Use Cases</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/"><h6>Devtron Generic Helm Chart To Run Cron Job Or One Time Job</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_spring_boot_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_spring_boot_with_mysql_database/"><h6>Connect SpringBoot with Mysql Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_expressjs_with_mongodb_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_expressjs_with_mongodb_database/"><h6>Connect Expressjs With Mongodb Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_django_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_django_with_mysql_database/"><h6>Connect Django With Mysql Database</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/"><h6> </h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/docs/hidden/" class="nav-item my-1">
+                
+                 <a href="/docs/hidden/" class="nav-link p-0" >
+                    
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#1-discover-the-chart-from-the-chart-store">1. Discover the chart from the Chart Store</a></li>
+    <li><a href="#2-configure-the-chart">2. Configure the Chart</a>
+      <ul>
+        <li><a href="#configure-valuesyaml">Configure <code>values.yaml</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-check-the-status-of-deployment">3. Check the Status of Deployment</a></li>
+    <li><a href="#4-extract-the-service-name">4. Extract the Service Name</a></li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<h1>Deploying Mysql Helm Chart</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>stable/mysql Helm chart bootstraps a single node MySQL deployment on a Kubernetes cluster using the Helm package manager.</p>
+<p>  </p>
+<figure>
+    <img src="../../../mysql.jpg" height="490px"/> 
+</figure>
+
+<p>  </p>
+<h2 id="1-discover-the-chart-from-the-chart-store">1. Discover the chart from the Chart Store</h2>
+<p>Select the <code>Charts</code> section from the left pane, you will be landed to the <code>Chart Store</code> page. Click on <code>Discover</code> and find <code>stable/mongodb-replicaset</code> Helm Chart.</p>
+<p>  </p>
+<figure>
+    <img src="../../../chart21.jpg" height="280px"/> 
+</figure>
+
+<p>  </p>
+<h2 id="2-configure-the-chart">2. Configure the Chart</h2>
+<p>After selecting the stable/mySQL Helm chart, click on <code>Deploy</code></p>
+<p><!-- raw HTML omitted --></p>
+<p>Enter the following details, to deploy mysql chart:</p>
+<p><!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>App Name</code></td>
+<td>Name of the Chart</td>
+</tr>
+<tr>
+<td><code>Project</code></td>
+<td>Select the name of your Project in which you want to deploy the chart</td>
+</tr>
+<tr>
+<td><code>Environment</code></td>
+<td>Select the environment in which you want to deploy the chart</td>
+</tr>
+<tr>
+<td><code>Chart Version</code></td>
+<td>Select the latest Chart Version</td>
+</tr>
+<tr>
+<td><code>Chart Value</code></td>
+<td>Select the latest default value or create a custom value</td>
+</tr>
+</tbody>
+</table>
+<p>  </p>
+<h3 id="configure-valuesyaml">Configure <code>values.yaml</code></h3>
+<p>Set the following parameters in the chart, to be later used to connect mysql with your Django Application.</p>
+<p>  </p>
+<figure>
+    <img src="../../../chart3.jpg" height="300px"/> 
+</figure>
+
+<p>  </p>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mysqlRootPassword</code></td>
+<td>Password for the root user. Ignored if existing secret is provided</td>
+</tr>
+<tr>
+<td><code>mysqlDatabase</code></td>
+<td>Name of your mysql database</td>
+</tr>
+<tr>
+<td><code>mysqluser</code></td>
+<td>Username of new user to create</td>
+</tr>
+<tr>
+<td><code>mysqlPassword</code></td>
+<td>Password for the new user. Ignored if existing secret is provided</td>
+</tr>
+</tbody>
+</table>
+<p>  </p>
+<figure>
+    <img src="../../../chart4o.jpg" height="890px"/> 
+</figure>
+
+<p>  
+Click on <code>Deploy</code> to deploy the Chart</p>
+<p><!-- raw HTML omitted --></p>
+<h2 id="3-check-the-status-of-deployment">3. Check the Status of Deployment</h2>
+<p>After clicking on <code>Deploy</code> you will land on a page, that shows the Status of the deployment of the Chart.</p>
+<p>The Status of the chart should be <code>Healthy</code>. It might take few seconds after  initiating the deployment of the chart.</p>
+<p>  </p>
+<figure>
+    <img src="../../../sql1.png" height="140px"/> 
+</figure>
+
+<p>  </p>
+<p>In case the Status, of the deployment is <code>Degraded</code> or takes a long time to get deployed.</p>
+<p>Click on the <code>Status</code> or check the logs  of the pods to debug the issue.</p>
+<h2 id="4-extract-the-service-name">4. Extract the Service Name</h2>
+<p>Copy the service name, it will be used to connect your application to mySQL.</p>
+<p>  </p>
+<figure>
+    <img src="../../../sql2.png" height="310px"/> 
+</figure>
+
+<p>  </p>
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class ="d-inline-flex w-100 view overlay mt-5 " >
+    
+        <div class=" overflow-hidden pr-3 w-50 bg-white footer__border footer__border--m-24" >
+              <div class ="d-inline-flex w-100"><a class="footer__left-arrow-icon " href="/deploy_chart/examples/" ><i class="fas fa-arrow-left "></i></a>
+                <div class="footer__align-left">
+                    <div class="footer__previous-page text-black-50  text-right " >Previous</div>
+
+                    <div class="text-right "><a class=" d-inline-block footer__text-hover "  href="/deploy_chart/examples/" title="Examples">Examples</a>
+                            </div>
+             </div>
+        </div>
+   </div>
+
+
+   <div class=" overflow-hidden pl-3 w-50  bg-white footer__border" >
+             <div class ="d-inline-flex w-100" >
+                      <div class="text-left">
+                            <div class="text-black-50 footer__previous-page" >Next</div>
+                            <div><a class="d-inline-block footer__text-hover "  href="/deploy_chart/examples/deploying_mongodb_helm_chart/" title="Deploying MongoDB Helm Chart">Deploying MongoDB Helm Chart</a>
+                                </div>
+                        </div><a href="/deploy_chart/examples/deploying_mongodb_helm_chart/"  class="text-right footer__right-arrow-icon" ><i  class="fas fa-arrow-right "></i></a>
+                          </div>
+</div>
+ </div> 
+
+</body>
+
+</html>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="/lib/jquery.min.js"></script> 
+<script src="/lib/popper.min.js"></script> 
+
+<script src="/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>

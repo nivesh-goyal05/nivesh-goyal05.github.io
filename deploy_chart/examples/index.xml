@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Examples on Devtron Labs tutorial</title>
+    <link>/deploy_chart/examples/</link>
+    <description>Recent content in Examples on Devtron Labs tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/deploy_chart/examples/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying Mysql Helm Chart</title>
+      <link>/deploy_chart/examples/deploying_mysql_helm_chart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/deploy_chart/examples/deploying_mysql_helm_chart/</guid>
+      <description>Introduction stable/mysql Helm chart bootstraps a single node MySQL deployment on a Kubernetes cluster using the Helm package manager.
+    1. Discover the chart from the Chart Store Select the Charts section from the left pane, you will be landed to the Chart Store page. Click on Discover and find stable/mongodb-replicaset Helm Chart.
+    2. Configure the Chart After selecting the stable/mySQL Helm chart, click on Deploy</description>
+    </item>
+    
+    <item>
+      <title>Deploying MongoDB Helm Chart</title>
+      <link>/deploy_chart/examples/deploying_mongodb_helm_chart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/deploy_chart/examples/deploying_mongodb_helm_chart/</guid>
+      <description>Introduction Let&amp;rsquo;s assume that you are building an application which needs mongoDB.
+   Deploying applications as Helm Charts is the easiest way to create applications on Devtron.
+This guide will introduce you to how to deploy the mongoDB&amp;rsquo;s Helm chart.
+1. Discover the Chart from the Chart Store Select the Charts section from the left pane, you will be landed to the Chart Store page. Click on Discover and find stable/mongodb-replicaset Helm Chart.</description>
+    </item>
+    
+  </channel>
+</rss>

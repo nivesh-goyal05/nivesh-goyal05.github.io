@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="canonical" href="/creating_application/workflows/ci_pipelines/">
+
+    <title>
+        
+        CI Pipeline | Devtron Labs tutorial
+        
+    </title>
+
+    
+    <link href="/css/fontawesome.min.css" rel="stylesheet">
+
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    
+    <link rel="stylesheet" href="/css/ace.min.css">
+
+    
+    
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                Devtron Labs tutorial
+            </a>
+        </div>
+        
+    </div>
+</nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse" style=" overflow-y : scroll; height: 600px; margin-right: -20px; overflow-x: hidden;">
+            <form class="form-inline my-2 my-lg-0 searchbox" >
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search" >
+            </form>
+        <h6 class="pt-3" style="color: rgba(0,0,0,.5)">Refrence</h6>
+         <ul class="navbar-nav flex-column " style="margin-left: 10px;">
+    <li data-nav-id="/creating_application/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/"><h6>Creating Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/creating_application/git_material/" class="nav-item my-1">
+                
+                 <a href="/creating_application/git_material/" class="nav-link p-0" >
+                    Git Material
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/docker_configuration/" class="nav-item my-1">
+                
+                 <a href="/creating_application/docker_configuration/" class="nav-link p-0" >
+                    Docker Build Configuration
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/deployment_template/" class="nav-item my-1">
+                
+                 <a href="/creating_application/deployment_template/" class="nav-link p-0" >
+                    Deployment Template
+                </a>
+        </li>
+    <li data-nav-id="/creating_application/workflows/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/"><h6>Workflow</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/creating_application/workflows/ci_pipelines/" class="nav-item my-1 parent active
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/ci_pipelines/"><h6>CI Pipeline</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/workflows/cd_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/cd_pipelines/"><h6>CD Pipeline</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/creating_application/config_maps/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/config_maps/"><h6>Config Maps</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/secrets/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/secrets/"><h6>Secrets</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/environment_overrides/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/environment_overrides/"><h6>Environment Overrides</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cloning_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/cloning_applications/"><h6>Cloning Application</h6></a>
+    </li>
+    <li data-nav-id="/deploying_applications/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploying_applications/"><h6>Deploying Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploying_applications/triggering_ci/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_ci/" class="nav-link p-0" >
+                    Triggering CI
+                </a>
+        </li>
+        <li data-nav-id="/deploying_applications/triggering_cd/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_cd/" class="nav-link p-0" >
+                    Triggering CD
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/deploy_chart/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/"><h6>Deploy Chart</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/overview/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/overview/" class="nav-link p-0" >
+                    Overview Of Charts
+                </a>
+        </li>
+    <li data-nav-id="/deploy_chart/examples/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/examples/"><h6>Examples</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-link p-0" >
+                    Deploying Mysql Helm Chart
+                </a>
+        </li>
+        <li data-nav-id="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-link p-0" >
+                    Deploying MongoDB Helm Chart
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debugging_deployments_and_monitoring/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/debugging_deployments_and_monitoring/"><h6> Debugging Deployment And Monitoring</h6></a>
+    </li>
+    <li data-nav-id="/namespaces_and_environments/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/namespaces_and_environments/"><h6>Namespaces And Environments</h6></a>
+    </li>
+    <li data-nav-id="/security_features/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/security_features/"><h6>Security Features</h6></a>
+    </li>
+    <li data-nav-id="/deleting_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/deleting_applications/"><h6>Deleting Application</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/"><h6>Global Configurations</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/global_configurations/git_accounts/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/git_accounts/"><h6>Git Accounts</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/docker_registries/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/docker_registries/"><h6>Docker Registries</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/cluster_and_environment/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/cluster_and_environment/"><h6>Cluster And Environments</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/projects/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/projects/"><h6>Projects</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/user_access/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/user_access/"><h6>User Access</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/manage_notification/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/manage_notification/"><h6>Manage Notification</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/use_cases/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/"><h6>Use Cases</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/"><h6>Devtron Generic Helm Chart To Run Cron Job Or One Time Job</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_spring_boot_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_spring_boot_with_mysql_database/"><h6>Connect SpringBoot with Mysql Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_expressjs_with_mongodb_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_expressjs_with_mongodb_database/"><h6>Connect Expressjs With Mongodb Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_django_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_django_with_mysql_database/"><h6>Connect Django With Mysql Database</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/"><h6> </h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/docs/hidden/" class="nav-item my-1">
+                
+                 <a href="/docs/hidden/" class="nav-link p-0" >
+                    
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-ci-pipeline">Create CI Pipeline</a></li>
+    <li><a href="#1-continuous-integration">1. Continuous Integration</a>
+      <ul>
+        <li><a href="#1-pipeline-name">1. Pipeline Name</a></li>
+        <li><a href="#2-source-type">2. Source Type</a></li>
+        <li><a href="#3-branch-name">3. Branch Name</a></li>
+        <li><a href="#4-stages">4. Stages</a></li>
+        <li><a href="#5-scan-for-vulnerabilities">5. Scan for vulnerabilities</a></li>
+      </ul>
+    </li>
+    <li><a href="#update-ci-pipeline">Update CI Pipeline</a></li>
+    <li><a href="#delete-ci-pipeline">Delete CI Pipeline</a></li>
+    <li><a href="#automated-test-suite-integration-in-the-ci-step-using-devtron-ciyaml">Automated Test suite integration in the CI step using devtron-ci.yaml</a></li>
+    <li><a href="#external-ci-pipeline">External CI Pipeline</a></li>
+    <li><a href="#linked-ci-pipeline">Linked CI Pipeline</a></li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<h1>CI Pipeline</h1>
+
+<h2 id="create-ci-pipeline">Create CI Pipeline</h2>
+<p><!-- raw HTML omitted --></p>
+<figure>
+    <img src="./workflow-editor2.PNG" height="320px"/> 
+</figure>
+
+<p>  </p>
+<p>After providing the name to the <a href="/creating_application/workflows">workflow</a>, click on Add CI Pipeline to add a new CI Pipeline. When you click on Add CI pipeline, you can see three options</p>
+<ol>
+<li>
+<p>Continuous Integration</p>
+</li>
+<li>
+<p>Linked CI Pipeline</p>
+</li>
+<li>
+<p>Incoming Webhook</p>
+</li>
+</ol>
+<p>  </p>
+<figure>
+    <img src="./add_pipeline.jpg" height="385px"/> 
+</figure>
+
+<p><!-- raw HTML omitted --></p>
+<h2 id="1-continuous-integration">1. Continuous Integration</h2>
+<p>CI related configuration is provided under this section. We will later discuss this in detail.</p>
+<p>Click on <code>Continuous Integration</code> to configure CI Pipeline, a new window will appear. You can see 5 options on this new window:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pipeline Name</code></td>
+<td>Name of the pipeline</td>
+</tr>
+<tr>
+<td><code>Source Type</code></td>
+<td>Select the source through which the CI Pipeline will be triggered by Automatic or Manual.</td>
+</tr>
+<tr>
+<td><code>Branch Name/Tag Regex</code></td>
+<td>Enter branch name/tag regex.</td>
+</tr>
+<tr>
+<td><code>Stages</code></td>
+<td>1. <strong>Pre-build Stages</strong>- Scripts to be executed before building an image. 2. <strong>Docker build Stages</strong>- Provide a new argument and override an old argument in key-value pair. 3. <strong>Docker build Stages</strong>- Scripts to be executed after building image</td>
+</tr>
+<tr>
+<td><code>Scan for vulnerabilities</code></td>
+<td>It will scan your image and find if any vulnerabilities present</td>
+</tr>
+</tbody>
+</table>
+<p>  </p>
+<figure>
+    <img src="./create_pipeline.jpg" height="745px"/> 
+</figure>
+
+<p>  </p>
+<h3 id="1-pipeline-name">1. Pipeline Name</h3>
+<p>First of all, give a name to your CI pipeline.</p>
+<h3 id="2-source-type">2. Source Type</h3>
+<p>In source type, select between Automatic or Manual. Here if you select Automatic, the CI pipeline will be triggered automatically whenever you push any commit to your repository. But if you select Manual, then you have to trigger your CI pipeline every time manually through the console.</p>
+<h3 id="3-branch-name">3. Branch Name</h3>
+<p>In this column, you have to provide your branch or tag regex where your code is present and the branch to want this CI pipeline to be linked with.</p>
+<p><strong>Example</strong>- It can be a master branch in the production and development/staging branch in the dev environment. But the branch name completely depends on the user, which branch name the user wants to provide here.</p>
+<h3 id="4-stages">4. Stages</h3>
+<h4 id="a-pre-build">(a) Pre-build</h4>
+<p>This section is used for those Scripts which you want to execute before building the Docker image. To add a Pre-build stage, click on Add Stage and provide a name to your pre-stage and write your script as per your requirement. This will run in sequence before the docker image is built. You can also provide the path of the directory where the output of the script will be stored in the Remote Directory column. But this is optional to fill because many times you run scripts which do not provide any output.</p>
+<p>You can add one stage or more than one stage in a CI Pipeline.</p>
+<p>  </p>
+<figure>
+    <img src="./pre_build.jpg" height="480px"/> 
+</figure>
+
+<p>  </p>
+<h4 id="b-docker-build">(b) Docker build</h4>
+<p>Though we have the option available in Docker build configuration section to add arguments in key-value pairs for docker build image. But one can also provide docker build arguments here as well. This is useful, in case you want to override them or want to add new arguments to build your docker image.</p>
+<h4 id="c-post-build">(c) Post-build</h4>
+<p>The post-build stage is similar to the pre-build stage. The difference between the post-build stage and the pre-build stage is that the post-build will run when your CI pipeline will be executed successfully.</p>
+<p>Adding a post-build stage is similar to adding a pre-build stage. Click on Add Stage and provide a name to your post-stage. Here you can write your script as per your requirement, which will run in sequence after the docker image is built. You can also provide the path of the directory in which the output of the script will be stored in the Remote Directory column. And this is optional to fill because many times you run scripts which do not provide any output.</p>
+<p>  </p>
+<figure>
+    <img src="./post_build.jpg" height="480px"/> 
+</figure>
+
+<p>  </p>
+<h4 id="note">NOTE:</h4>
+<p>You can provide pre-build and post-build stages via the Devtron tool’s console or can also provide these details by creating a file “devtron.ci.yaml” inside your repository. There is a pre-defined format to write this file. And we will run these stages using this YAML file.</p>
+<p>You can provide some stages on the Devtron tool’s console and some stages in the devtron.ci.yaml file. But stages defined through the Devtron dashboard are first executed then the stages defined in the devtron.ci.yaml file.</p>
+<h3 id="5-scan-for-vulnerabilities">5. Scan for vulnerabilities</h3>
+<p>Scan for vulnerabilities adds a security feature in your application. If you enable this option, your code will be scanned for any vulnerabilities present in your code. And you will be informed about these vulnerabilities. For more details please check <!-- raw HTML omitted --> doc</p>
+<p>You have provided all the details required to create a CI pipeline, now click on Create Pipeline.</p>
+<h2 id="update-ci-pipeline">Update CI Pipeline</h2>
+<p>You can also update any configuration of an already created CI Pipeline, except the pipeline name. The pipeline name can not be edited.</p>
+<p>  </p>
+<figure>
+    <img src="./update_pipeline_ci.jpg" height="385px"/> 
+</figure>
+
+<p>  </p>
+<p>Click on your CI Pipeline, to update your CI Pipeline. A window will be popped up with all the details of the current pipeline.</p>
+<p>  </p>
+<figure>
+    <img src="./edit_pipeline.jpg" height="840px"/> 
+</figure>
+
+<p>  </p>
+<p>Make your changes and click on <code>Update Pipeline</code> to update your Pipeline.</p>
+<h2 id="delete-ci-pipeline">Delete CI Pipeline</h2>
+<p>You can only delete CI Pipeline if you have no CD Pipeline created in your workflow.</p>
+<p>To Delete a CI Pipeline, go to the <code>App Configurations</code> and then click on <code>Workflow</code> editor</p>
+<p>  </p>
+<figure>
+    <img src="./edit_pipeline.jpg" height="840px"/> 
+</figure>
+
+<p>  </p>
+<p>Click on <code>Delete Pipeline</code> to delete the CD Pipeline</p>
+<h2 id="automated-test-suite-integration-in-the-ci-step-using-devtron-ciyaml">Automated Test suite integration in the CI step using devtron-ci.yaml</h2>
+<p>Users can run the Test case using the Devtron Dashboard or by including the Test cases in the devtron.ci.yaml file in the source git repository. For reference, check: <a href="https://github.com/kumarnishant/getting-started-nodejs/blob/master/devtron-ci.yaml">https://github.com/kumarnishant/getting-started-nodejs/blob/master/devtron-ci.yaml</a></p>
+<p>The test cases given in the script will run before the Test Cases given in the devtron.ci.yaml</p>
+<p>  </p>
+<figure>
+    <img src="./yaml.jpg" height="440px"/> 
+</figure>
+
+<p>  </p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>specify the version of yaml</td>
+</tr>
+<tr>
+<td><code>appliesTo</code></td>
+<td>applies the changes to a specified branch</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>branch type on which changes are to be applied, it can be <strong>BRANCH_FIXED</strong> or <strong>TAG_PATTERN</strong></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>branch name on which changes are to be applied, it can take a value as the name of branch (“master”) or as a regular expression (&quot;%d.%d.%d-rc&quot;)</td>
+</tr>
+<tr>
+<td><code>script</code></td>
+<td>A script which you want to execute, you can also execute the docker commands here</td>
+</tr>
+<tr>
+<td><code>beforeDockerBuildStages</code></td>
+<td>script to run before the docker build step</td>
+</tr>
+<tr>
+<td><code>afterDockerBuildStages</code></td>
+<td>script to run after the docker build step</td>
+</tr>
+<tr>
+<td><code>outputLocation</code></td>
+<td>The location where you want to see the output of the report of Test cases</td>
+</tr>
+</tbody>
+</table>
+<h2 id="external-ci-pipeline">External CI Pipeline</h2>
+<p>You can use Devtron for Deployments on Kubernetes while still using your own CI tool such as Jenkins. External CI features can be used for such cases where the CI tool is hosted outside the Devtron platform.</p>
+<p>  </p>
+<figure>
+    <img src="./external_pipeline.jpg" height="700px"/> 
+</figure>
+
+<p>  </p>
+<p>You can send the ‘Payload script’ to your CI tools such as Jenkins and Devtron will receive the build image every time the CI Service is triggered or you can use the Webhook URL which will build an image every time CI Service is triggered using Devtron Dashboard.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pipeline Name</code></td>
+<td>Name of the pipeline</td>
+</tr>
+<tr>
+<td><code>Source Type</code></td>
+<td>‘Branch Fixed’ or ‘Tag Regex’</td>
+</tr>
+<tr>
+<td><code>Branch Name</code></td>
+<td>Name of the branch</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linked-ci-pipeline">Linked CI Pipeline</h2>
+<p>If one code is shared across multiple applications, Linked CI Pipeline can be used, and only one image will be built for multiple applications because if there is only one build, it is not advisable to create multiple CI Pipelines.</p>
+<p>  </p>
+<figure>
+    <img src="../../linked.jpg" height="615px"/> 
+</figure>
+
+<p><!-- raw HTML omitted --></p>
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class ="d-inline-flex w-100 view overlay mt-5 " >
+    
+        <div class=" overflow-hidden pr-3 w-50 bg-white footer__border footer__border--m-24" >
+              <div class ="d-inline-flex w-100"><a class="footer__left-arrow-icon " href="/creating_application/workflows/" ><i class="fas fa-arrow-left "></i></a>
+                <div class="footer__align-left">
+                    <div class="footer__previous-page text-black-50  text-right " >Previous</div>
+
+                    <div class="text-right "><a class=" d-inline-block footer__text-hover "  href="/creating_application/workflows/" title="Workflow">Workflow</a>
+                            </div>
+             </div>
+        </div>
+   </div>
+
+
+   <div class=" overflow-hidden pl-3 w-50  bg-white footer__border" >
+             <div class ="d-inline-flex w-100" >
+                      <div class="text-left">
+                            <div class="text-black-50 footer__previous-page" >Next</div>
+                            <div><a class="d-inline-block footer__text-hover "  href="/creating_application/workflows/cd_pipelines/" title="CD Pipeline">CD Pipeline</a>
+                                </div>
+                        </div><a href="/creating_application/workflows/cd_pipelines/"  class="text-right footer__right-arrow-icon" ><i  class="fas fa-arrow-right "></i></a>
+                          </div>
+</div>
+ </div> 
+
+</body>
+
+</html>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="/lib/jquery.min.js"></script> 
+<script src="/lib/popper.min.js"></script> 
+
+<script src="/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>

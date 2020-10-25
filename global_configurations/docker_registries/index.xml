@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Registries on Devtron Labs tutorial</title>
+    <link>/global_configurations/docker_registries/</link>
+    <description>Recent content in Docker Registries on Devtron Labs tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/global_configurations/docker_registries/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

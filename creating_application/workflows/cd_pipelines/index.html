@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html><head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="canonical" href="/creating_application/workflows/cd_pipelines/">
+
+    <title>
+        
+        CD Pipeline | Devtron Labs tutorial
+        
+    </title>
+
+    
+    <link href="/css/fontawesome.min.css" rel="stylesheet">
+
+
+    
+    
+    <link rel="stylesheet" href="/css/main.css">
+
+
+    
+    <link rel="stylesheet" href="/css/ace.min.css">
+
+    
+    
+        
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-154884741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+
+</head>
+<body><nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="navbarMain">
+    <div class="container">
+        <div>
+            <a class="navbar-brand" href="/">
+                
+                Devtron Labs tutorial
+            </a>
+        </div>
+        
+    </div>
+</nav>
+<div class="container-fluid">
+            <div class="row">
+
+                <div class="docs-sidenav order-0 col-12 col-md-3 col-lg-2 col-xl-2 position-sticky border-right"><nav class="navbar navbar-expand-md navbar-light pl-0">
+    <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#sidenav-left-collapse" aria-controls="sidenav-left-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+     <div class="collapse navbar-collapse align-items-start flex-column" id="sidenav-left-collapse" style=" overflow-y : scroll; height: 600px; margin-right: -20px; overflow-x: hidden;">
+            <form class="form-inline my-2 my-lg-0 searchbox" >
+                <input class="form-control mr-sm-2 w-100" data-search-input id="search-by" type="text" placeholder="Search" >
+            </form>
+        <h6 class="pt-3" style="color: rgba(0,0,0,.5)">Refrence</h6>
+         <ul class="navbar-nav flex-column " style="margin-left: 10px;">
+    <li data-nav-id="/creating_application/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/"><h6>Creating Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/creating_application/git_material/" class="nav-item my-1">
+                
+                 <a href="/creating_application/git_material/" class="nav-link p-0" >
+                    Git Material
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/docker_configuration/" class="nav-item my-1">
+                
+                 <a href="/creating_application/docker_configuration/" class="nav-link p-0" >
+                    Docker Build Configuration
+                </a>
+        </li>
+        <li data-nav-id="/creating_application/deployment_template/" class="nav-item my-1">
+                
+                 <a href="/creating_application/deployment_template/" class="nav-link p-0" >
+                    Deployment Template
+                </a>
+        </li>
+    <li data-nav-id="/creating_application/workflows/" class="nav-item my-1 parent haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/"><h6>Workflow</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/creating_application/workflows/ci_pipelines/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/ci_pipelines/"><h6>CI Pipeline</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/workflows/cd_pipelines/" class="nav-item my-1 parent active
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/workflows/cd_pipelines/"><h6>CD Pipeline</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/creating_application/config_maps/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/config_maps/"><h6>Config Maps</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/secrets/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/secrets/"><h6>Secrets</h6></a>
+    </li>
+    <li data-nav-id="/creating_application/environment_overrides/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/creating_application/environment_overrides/"><h6>Environment Overrides</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/cloning_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/cloning_applications/"><h6>Cloning Application</h6></a>
+    </li>
+    <li data-nav-id="/deploying_applications/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploying_applications/"><h6>Deploying Application</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploying_applications/triggering_ci/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_ci/" class="nav-link p-0" >
+                    Triggering CI
+                </a>
+        </li>
+        <li data-nav-id="/deploying_applications/triggering_cd/" class="nav-item my-1">
+                
+                 <a href="/deploying_applications/triggering_cd/" class="nav-link p-0" >
+                    Triggering CD
+                </a>
+        </li>
+        </ul>
+    </li>
+    <li data-nav-id="/deploy_chart/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/"><h6>Deploy Chart</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/overview/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/overview/" class="nav-link p-0" >
+                    Overview Of Charts
+                </a>
+        </li>
+    <li data-nav-id="/deploy_chart/examples/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/deploy_chart/examples/"><h6>Examples</h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mysql_helm_chart/" class="nav-link p-0" >
+                    Deploying Mysql Helm Chart
+                </a>
+        </li>
+        <li data-nav-id="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-item my-1">
+                
+                 <a href="/deploy_chart/examples/deploying_mongodb_helm_chart/" class="nav-link p-0" >
+                    Deploying MongoDB Helm Chart
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debugging_deployments_and_monitoring/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/debugging_deployments_and_monitoring/"><h6> Debugging Deployment And Monitoring</h6></a>
+    </li>
+    <li data-nav-id="/namespaces_and_environments/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/namespaces_and_environments/"><h6>Namespaces And Environments</h6></a>
+    </li>
+    <li data-nav-id="/security_features/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/security_features/"><h6>Security Features</h6></a>
+    </li>
+    <li data-nav-id="/deleting_applications/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/deleting_applications/"><h6>Deleting Application</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/"><h6>Global Configurations</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/global_configurations/git_accounts/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/git_accounts/"><h6>Git Accounts</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/docker_registries/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/docker_registries/"><h6>Docker Registries</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/cluster_and_environment/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/cluster_and_environment/"><h6>Cluster And Environments</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/projects/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/projects/"><h6>Projects</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/user_access/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/user_access/"><h6>User Access</h6></a>
+    </li>
+    <li data-nav-id="/global_configurations/manage_notification/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/global_configurations/manage_notification/"><h6>Manage Notification</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/use_cases/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/"><h6>Use Cases</h6></a>
+<ul class="list-unstyled ml-2" >
+    <li data-nav-id="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/devtron_genric_charts_to_run_cron_jobs_or_one_time_job/"><h6>Devtron Generic Helm Chart To Run Cron Job Or One Time Job</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_spring_boot_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_spring_boot_with_mysql_database/"><h6>Connect SpringBoot with Mysql Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_expressjs_with_mongodb_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_expressjs_with_mongodb_database/"><h6>Connect Expressjs With Mongodb Database</h6></a>
+    </li>
+    <li data-nav-id="/use_cases/connect_django_with_mysql_database/" class="nav-item my-1
+        ">
+        
+        <a class="nav-link p-0" href="/use_cases/connect_django_with_mysql_database/"><h6>Connect Django With Mysql Database</h6></a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/docs/" class="nav-item my-1 haschildren
+        ">
+        
+        <a class="nav-link p-0" href="/docs/"><h6> </h6></a>
+<ul class="list-unstyled ml-2" >
+        <li data-nav-id="/docs/hidden/" class="nav-item my-1">
+                
+                 <a href="/docs/hidden/" class="nav-link p-0" >
+                    
+                </a>
+        </li>
+        </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+</div>
+                <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-cd-pipeline">Create CD Pipeline</a>
+      <ul>
+        <li><a href="#1-pipeline-name">1. Pipeline Name</a></li>
+        <li><a href="#2-deploy-to-environment">2. Deploy to Environment</a></li>
+        <li><a href="#3-pre-deployment-stage">3. Pre-deployment Stage</a></li>
+        <li><a href="#4-deployment-stages">4. Deployment Stages</a></li>
+        <li><a href="#5-deployment-strategy">5. Deployment Strategy</a></li>
+        <li><a href="#6-post-deployment-stages">6. Post-deployment Stages</a></li>
+      </ul>
+    </li>
+    <li><a href="#update-cd-pipeline">Update CD Pipeline</a></li>
+    <li><a href="#delete-cd-pipeline">Delete CD Pipeline</a></li>
+    <li><a href="#deployment-strategies">Deployment Strategies</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
+                <div class="main col-12 order-1 col-md-9 col-lg-10 col-xl-8 py-3">
+                
+
+<h1>CD Pipeline</h1>
+
+<h2 id="create-cd-pipeline">Create CD Pipeline</h2>
+<p><!-- raw HTML omitted --></p>
+<figure>
+    <img src="./workflow-editor5.PNG" height="320px"/> 
+</figure>
+
+<p>  </p>
+<p>Click on <strong>“+”</strong> sign on CI Pipeline to attach a CD Pipeline to it.</p>
+<p>  </p>
+<figure>
+    <img src="./workflow-editor6.PNG" height="320px"/> 
+</figure>
+
+<p>One can have a single CD pipeline or multiple CD pipelines connected to the same CI Pipeline. A CD pipeline corresponds to one environment or in other words, an environment of an application can have only one CD pipeline. So images created by the CI pipeline can be deployed into multiple environments.</p>
+<p>If you already have one CD pipeline and want to add more, you can add them by clicking on the “+” sign and selecting the environment, where you want to deploy this application to. A new CD Pipeline will be created for the environment you selected.</p>
+<p>CD pipeline configuration has below options to be configured:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pipeline Name</td>
+<td>Enter the name of the pipeline to be created</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>Select the environment in which you want to deploy</td>
+</tr>
+<tr>
+<td>Pre-deployment stage</td>
+<td>Run any configuration and provide secrets before the deployment</td>
+</tr>
+<tr>
+<td>Deployment stage</td>
+<td>Select the deployment type through which the CD Pipeline will be triggered by Automatic or Manual.</td>
+</tr>
+<tr>
+<td>Deployment Strategy</td>
+<td>Select the type of deployment strategy that you want to enable by clicking “Add Deployment Strategy”</td>
+</tr>
+<tr>
+<td>Post-deployment stage</td>
+<td>Run any configuration and provide secrets after the deployment</td>
+</tr>
+</tbody>
+</table>
+<p>  </p>
+<figure>
+    <img src="./workflow-editor8-resize.PNG" height="700px"/> 
+</figure>
+
+<p>  </p>
+<h3 id="1-pipeline-name">1. Pipeline Name</h3>
+<p>Inside the Pipeline name column, give a name to your Continuous deployment as per your understanding.</p>
+<h3 id="2-deploy-to-environment">2. Deploy to Environment</h3>
+<p>Select the environment where you want to deploy your application. Once you select the environment, it will display the Namespace corresponding to your selected environment automatically.</p>
+<h3 id="3-pre-deployment-stage">3. Pre-deployment Stage</h3>
+<p>Sometimes you encounter a requirement where you have to Configure actions like DB migration, which you want to run before the deployment. The Pre-deployment Stage comes into the picture in such scenarios.</p>
+<p>Pre-deployment stages can be configured to be executed automatically or manually.</p>
+<p>If you select automatic, Pre-deployment Stage will be triggered automatically after the CI pipeline gets executed and before the CD pipeline starts executing itself. But, if you select a manual, then you have to trigger your stage via console.</p>
+<p>And if you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can make use of Config Maps &amp; Secrets options.</p>
+<p>Config Maps can be used to define configuration files. And Secrets can be defined to keep the secret data of your application.</p>
+<p>Once you are done defining Config Maps &amp; Secrets, you will get them as a drop-down in the pre-deployment stage and you can select them as part of your pre-deployment stage.</p>
+<p>These Pre-deployment CD / Post-deployment CD pods can be created in the deployment cluster or in the devtron build cluster. Running these pods in a Deployment cluster is recommended so that your scripts(if there are any) can interact with the cluster services which may not be publicly exposed.</p>
+<p>If you want to run it inside your application then you have to check the Execute in application Environment option else leave it unchecked.</p>
+<p>(** Make sure your cluster has devtron-agent installed if you Check the Execute in the application Environment option.)</p>
+<p>  </p>
+<figure>
+    <img src="./cd_pre_build.jpg" height="820px"/> 
+</figure>
+
+<p>  </p>
+<h3 id="4-deployment-stages">4. Deployment Stages</h3>
+<p>We support two types of deployments- Manual and Automatic. If you select automatic, it will trigger your CD pipeline automatically once your corresponding CI pipeline has built successfully.</p>
+<p>If you have defined pre-deployment stages, then CD Pipeline will be triggered automatically after the successful build of your CI pipeline followed by the successful build of your pre-deployment stages. But if you select manual, then you have to trigger your deployment via console.</p>
+<h3 id="5-deployment-strategy">5. Deployment Strategy</h3>
+<p>Devtron&rsquo;s tool has 4 types of deployment strategies. Click on Add Deployment strategy and select from the available options. Options are:</p>
+<p>(a) Recreate</p>
+<p>(b) Canary</p>
+<p>(c) Blue Green</p>
+<p>(d) Rolling</p>
+<h3 id="6-post-deployment-stages">6. Post-deployment Stages</h3>
+<p>If you want to Configure actions like Jira ticket close, that you want to run after the deployment, you can configure such actions in post-deployment stages.</p>
+<p>Post-deployment stages are similar to pre-deployment stages. The difference is, pre-deployment executes before the CD pipeline execution and post-deployment executes after the CD pipeline execution. The configuration of post-deployment stages is similar to the pre-deployment stages.</p>
+<p>You can use Config Map and Secrets in post deployments as well, as defined in Pre-Deployment stages</p>
+<p>  </p>
+<figure>
+    <img src="./cd_post_build.jpg" height="820px"/> 
+</figure>
+
+<p>  </p>
+<p>You have configured the CD pipeline, now click on Create Pipeline to save it. You can see your newly created CD Pipeline on the Workflow tab attached to the corresponding CI Pipeline.</p>
+<p>  </p>
+<figure>
+    <img src="./workflow-editor9.PNG" height="320px"/> 
+</figure>
+
+<p>  </p>
+<p>The CD Pipeline is created</p>
+<h2 id="update-cd-pipeline">Update CD Pipeline</h2>
+<p>You can update the CD Pipeline. Updates such as- adding Deployment Stage, Deployment Strategy. But you cannot update the name of a CD Pipeline or it’s Deploy Environment. If you need to change such configurations, you need to make another CD Pipeline.</p>
+<p>To Update a CD Pipeline, go to the App Configurations and then click on Workflow editor and click on your CD Pipeline you want to Update.</p>
+<p>  </p>
+<figure>
+    <img src="./update_pipeline_cd.jpg" height="380px"/> 
+</figure>
+
+<p>  </p>
+<figure>
+    <img src="./edit_cd_pipeline.jpg" height="750px"/> 
+</figure>
+
+<p>  </p>
+<p>Make changes as per your requirement and click on Update Pipeline to update this CD Pipeline.</p>
+<h2 id="delete-cd-pipeline">Delete CD Pipeline</h2>
+<p>If you no longer require the CD Pipeline, you can also Delete the Pipeline.</p>
+<p>To Delete a CD Pipeline, go to the App Configurations and then click on the Workflow editor. Now Click on the pipeline you want to delete. A pop will be displayed with CD details. Now click on the Delete Pipeline option to delete this CD Pipeline</p>
+<p>  </p>
+<figure>
+    <img src="./edit_cd_pipeline.jpg" height="750px"/> 
+</figure>
+
+<p>  </p>
+<h2 id="deployment-strategies">Deployment Strategies</h2>
+<p>A deployment strategy is a way to make changes to an application, without downtime in a way that the user barely notices the changes. There are different types of deployment strategies like Blue/green Strategy, Rolling Strategy, Canary Strategy, Recreate Strategy. These deployment configuration-based strategies are discussed in this section.</p>
+<h4 id="blue-green-stategy">Blue Green Stategy</h4>
+<p>Blue-green deployments involve running two versions of an application at the same time and moving traffic from the in-production version (the green version)
+to the newer version (the blue version).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">blueGreen:
+ autoPromotionSeconds: 30
+ scaleDownDelaySeconds: 30
+ previewReplicaCount: 1
+ autoPromotionEnabled: false
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autoPromotionSeconds</code></td>
+<td>It will make the rollout automatically promote the new ReplicaSet to active Service after this time has passed</td>
+</tr>
+<tr>
+<td><code>scaleDownDelaySeconds</code></td>
+<td>It is used to delay scaling down the old ReplicaSet after the active Service is switched to the new ReplicaSet.</td>
+</tr>
+<tr>
+<td><code>previewReplicaCount</code></td>
+<td>It will indicate the number of replicas that the new version of an application should run</td>
+</tr>
+<tr>
+<td><code>autoPromotionEnabled</code></td>
+<td>It will make the rollout automatically promote the new ReplicaSet to the active service.</td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --></p>
+<h4 id="rolling-strategy">Rolling Strategy</h4>
+<p>A rolling deployment slowly replaces instances of the previous version of an application with instances of the new version of the application.
+Rolling deployment typically waits for new pods to become ready via a readiness check before scaling down the old components.
+If a significant issue occurs, the rolling deployment can be aborted.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">rolling:
+  maxSurge: &#34;25%&#34;
+  maxUnavailable: 1
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxSurge</code></td>
+<td>No. of replicas allowed above the scheduled qauntity.</td>
+</tr>
+<tr>
+<td><code>maxUnavailable</code></td>
+<td>Maximum number of pods allowed to be unavailable.</td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --></p>
+<h4 id="canary-strategy">Canary Strategy</h4>
+<p>Canary deployments are a pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers,
+test it, and then roll the change out to the rest of the servers.
+The canary deployment serves as an early warning indicator with less impact on downtime: if the canary deployment fails, the rest of the servers aren&rsquo;t impacted.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">canary:
+  maxSurge: &#34;25%&#34;
+  maxUnavailable: 1
+  steps:
+    - setWeight: 25
+    - pause:
+        duration: 15 # 1 min
+    - setWeight: 50
+    - pause:
+        duration: 15 # 1 min
+    - setWeight: 75
+    - pause:
+        duration: 15 # 1 min
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>maxSurge</code></td>
+<td>It defines the maximum number of replicas the rollout can create to move to the correct ratio set by the last setWeight</td>
+</tr>
+<tr>
+<td><code>maxUnavailable</code></td>
+<td>The maximum number of pods that can be unavailable during the update</td>
+</tr>
+<tr>
+<td><code>setWeight</code></td>
+<td>It is the required percent of pods to move to next step</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>It is used to set the duration to wait to move to the next step.</td>
+</tr>
+</tbody>
+</table>
+<p><!-- raw HTML omitted --></p>
+<h5 id="recreate">Recreate</h5>
+<p>The recreate strategy is a dummy deployment which consists of shutting down version A then deploying version B after version A is turned off.
+A recreate deployment incurs downtime because, for a brief period, no instances of your application are running.
+However, your old code and new code do not run at the same time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">recreate: 
+</code></pre></div><p>It terminate the old version and release the new one.</p>
+<p><a href="/creating_application/environment_overrides/">Does your app has different requirements in different Environments? Also read Environment Overrides</a></p>
+
+
+    
+
+
+                    
+                    <div class="row"><div class="position-relative mx-auto col-lg-9">
+                          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class ="d-inline-flex w-100 view overlay mt-5 " >
+    
+        <div class=" overflow-hidden pr-3 w-50 bg-white footer__border footer__border--m-24" >
+              <div class ="d-inline-flex w-100"><a class="footer__left-arrow-icon " href="/creating_application/workflows/ci_pipelines/" ><i class="fas fa-arrow-left "></i></a>
+                <div class="footer__align-left">
+                    <div class="footer__previous-page text-black-50  text-right " >Previous</div>
+
+                    <div class="text-right "><a class=" d-inline-block footer__text-hover "  href="/creating_application/workflows/ci_pipelines/" title="CI Pipeline">CI Pipeline</a>
+                            </div>
+             </div>
+        </div>
+   </div>
+
+
+   <div class=" overflow-hidden pl-3 w-50  bg-white footer__border" >
+             <div class ="d-inline-flex w-100" >
+                      <div class="text-left">
+                            <div class="text-black-50 footer__previous-page" >Next</div>
+                            <div><a class="d-inline-block footer__text-hover "  href="/creating_application/config_maps/" title="Config Maps">Config Maps</a>
+                                </div>
+                        </div><a href="/creating_application/config_maps/"  class="text-right footer__right-arrow-icon" ><i  class="fas fa-arrow-right "></i></a>
+                          </div>
+</div>
+ </div> 
+
+</body>
+
+</html>
+
+
+                        </div></div> 
+
+                </div>
+
+            </div> 
+
+        </div> 
+<script src="/lib/jquery.min.js"></script> 
+<script src="/lib/popper.min.js"></script> 
+
+<script src="/js/bootstrap.min.js"></script> 
+
+
+<script type="text/javascript" src="/plugins/lunr.min.js"></script>
+<script type="text/javascript" src="/plugins/auto-complete.js"></script>
+<link href="/plugins/auto-complete.css" rel="stylesheet">
+<script type="text/javascript">
+  
+      var baseurl = "";
+  
+</script>
+<script type="text/javascript" src="/plugins/search.js"></script>
+
+
+<script type="text/javascript" src="/plugins/clipboard.js"></script>
+<script>
+  new ClipboardJS('.btn');
+</script>
+</body>
+</html>
