@@ -285,7 +285,7 @@ if (!doNotTrack) {
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
 	<nav id="TableOfContents">
   <ul>
-    <li><a href="#manage-configuration"><strong>Manage Configuration</strong></a>
+    <li><a href="#notification-configuration">Notification Configuration:</a>
       <ul>
         <li><a href="#manage-ses-configurations"><strong>Manage SES Configurations</strong></a></li>
         <li><a href="#manage-slack-configurations"><strong>Manage Slack Configurations</strong></a></li>
@@ -306,12 +306,10 @@ if (!doNotTrack) {
 
 <h1>Manage Notification</h1>
 
-<h1 id="notification">Notification</h1>
-<p>This feature helps you manage the notifications for your build and deployment pipelines. You can recieve the notifications on Slack or via e-mail.</p>
-<p>Click on Global Configurations-&gt; Notification</p>
-<p><!-- raw HTML omitted --></p>
-<h2 id="manage-configuration"><strong>Manage Configuration</strong></h2>
-<p>Click on <strong>Configurations</strong> to manage <code>SES Configurations</code> or <code>Slack Configurations</code></p>
+<p>This feature helps you manage the notifications for your build and deployment pipelines. You can receive the notifications on Slack or via e-mail.</p>
+<p>Click on <code>Global Configurations</code> -&gt; <code>Notifications</code></p>
+<h2 id="notification-configuration">Notification Configuration:</h2>
+<p>Click on <code>Configurations</code> and you will see Devtron support two types of configurations <code>SES Configurations</code> or <code>Slack Configurations</code>.</p>
 <p>  </p>
 <figure>
     <img src="../../not2.jpg" height="410px"/> 
@@ -319,7 +317,7 @@ if (!doNotTrack) {
 
 <p>  </p>
 <h3 id="manage-ses-configurations"><strong>Manage SES Configurations</strong></h3>
-<p>You can manage the SES configuration to recieve e-mails by entering the valid credentials. Make sure your e-mail is verified by SES.</p>
+<p>You can manage the <code>SES configuration</code> to recieve e-mails by entering the valid credentials. Make sure your e-mail is verified by SES.</p>
 <p>  </p>
 <figure>
     <img src="../../not1.jpg" height="350px"/> 
@@ -343,7 +341,7 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td><code>Configuation Name</code></td>
-<td>Name of the SES Configuration</td>
+<td>Give a name to the SES Configuration</td>
 </tr>
 <tr>
 <td><code>Access Key ID</code></td>
@@ -363,9 +361,10 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+<p>Click on <code>Save</code> to save your SES configuration or e-mail ID</p>
 <p>  </p>
 <h3 id="manage-slack-configurations"><strong>Manage Slack Configurations</strong></h3>
-<p>You can manage the Slack configurations to recieve notifications on your preferred Slack channel.</p>
+<p>You can manage the <code>Slack configurations</code> to recieve notifications on your preferred Slack channel.</p>
 <p>  </p>
 <figure>
     <img src="../../not4.jpg" height="170px"/> 
@@ -401,6 +400,7 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+<p>Click on <code>Save</code> and your slack channel will be added.</p>
 <p>  </p>
 <h2 id="manage-notifications"><strong>Manage Notifications</strong></h2>
 <p>Click on <code>Add New</code> to recieve new notification.</p>
@@ -418,8 +418,7 @@ if (!doNotTrack) {
 
 <p>  </p>
 <p><em><strong>Send To</strong></em></p>
-<p>First, enter the name of your Slack Channel if you have already configured Slack Channel.</p>
-<p>If you have not yet configured the Slack Channel, Click on <a href="/global_configurations/manage_notification/#manage-slack-configurations">Configure Slack Channel</a></p>
+<p>When you click on the <code>Send to</code> box, a drop-down will appear, select your slack channel name if you have already configured Slack Channel. If you have not yet configured the Slack Channel, Click on <a href="/global_configurations/manage_notification/#manage-slack-configurations">Configure Slack Channel</a></p>
 <p><!-- raw HTML omitted --></p>
 <p><em><strong>Select Pipelines</strong></em></p>
 <ul>
@@ -430,7 +429,7 @@ if (!doNotTrack) {
 <p>Choose a filter type(<code>environment</code>, <code>project</code> or <code>application</code>)</p>
 </li>
 <li>
-<p>Then you will see a list of pipelines, you can select any number of pipelines. For each pipeline there are 3 types of events <code>Trigger</code>, <code>Success</code> and <code>Failure</code>. Click on the check boxes for the events, you wish to recieve notifications.</p>
+<p>You will see a list of pipelines corresponding to your selected filter type, you can select any number of pipelines. For each pipeline, there are 3 types of events <code>Trigger</code>, <code>Success</code>, and <code>Failure</code>. Click on the checkboxes for the events, on which you want to receive notifications.</p>
 </li>
 </ul>
 </li>
@@ -441,7 +440,7 @@ if (!doNotTrack) {
 </figure>
 
 <p><!-- raw HTML omitted --></p>
-<p>Click on <code>Save</code> after you have configured Slack notifications.</p>
+<p>Click on <code>Save</code> when you are done with your Slack notification configuration.</p>
 <p><!-- raw HTML omitted --></p>
 <h3 id="manage-ses-notifications"><strong>Manage SES Notifications</strong></h3>
 <p>  </p>
@@ -452,20 +451,20 @@ if (!doNotTrack) {
 <p>  </p>
 <p><em><strong>Send To</strong></em></p>
 <ul>
-<li>First, enter the e-mail address/addresses on which you want to send e-mail notifications. Make sure e-mail id&rsquo;s are SES Verified.</li>
+<li>Click on the Send To box, select your e-mail address/addresses on which you want to send e-mail notifications. Make sure e-mail id are SES Verified.</li>
 </ul>
 <p>If you have not yet configured SES, Click on <a href="/global_configurations/manage_notification/#manage-ses-notifications">Configure SES</a></p>
 <p><!-- raw HTML omitted --></p>
 <p><em><strong>Select Pipelines</strong></em></p>
 <ul>
 <li>
-<p>Then, to fetch pipelines of an application, project and environment.</p>
+<p>To fetch pipelines of an application, project and environment.</p>
 <ul>
 <li>
 <p>Choose a filter type(environment, project or application)</p>
 </li>
 <li>
-<p>Then you will see a list of pipelines, you can select any number of pipelines. For each pipeline there are 3 types of events Trigger, Success and Failure. Click on the check boxes for the events, you wish to recieve notifications.</p>
+<p>You will see a list of pipelines corresponding to your selected filter type, you can select any number of pipelines. For each pipeline, there are 3 types of events <code>Trigger</code>, <code>Success</code>, and <code>Failure</code>. Click on the checkboxes for the events, on which you want to receive notifications.</p>
 </li>
 </ul>
 </li>
@@ -476,7 +475,7 @@ if (!doNotTrack) {
 </figure>
 
 <p><!-- raw HTML omitted --></p>
-<p>Click on <code>Save</code> after you have configured the e-mail notification.</p>
+<p>Click on <code>Save</code> once you have configured the e-mail notification.</p>
 
 
     

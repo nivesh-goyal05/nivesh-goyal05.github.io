@@ -285,21 +285,26 @@ if (!doNotTrack) {
                 <div class="docs-toc large order-lg-2 order-md-0 order-xs-1 col-12 col-lg-2 col-xl-2 position-sticky border-left"><div class="docs-toc">
 	<nav id="TableOfContents">
   <ul>
-    <li><a href="#usergroup-authorization">User/Group Authorization</a></li>
-    <li><a href="#users"><strong>Users</strong></a>
+    <li><a href="#users">Users</a>
       <ul>
-        <li><a href="#1-add-new-user"><strong>1. Add new user</strong></a></li>
-        <li><a href="#2-create-user-permissions"><strong>2. Create User Permissions</strong></a></li>
-        <li><a href="#3-edit-user-permissions"><strong>3. Edit User Permissions</strong></a></li>
-        <li><a href="#4-manage-chart-group-permissions"><strong>4. Manage Chart Group Permissions</strong></a></li>
+        <li><a href="#1-add-new-user">1. Add new user</a></li>
+        <li><a href="#2-create-user-permissions">2. Create User Permissions</a></li>
       </ul>
     </li>
-    <li><a href="#groups"><strong>Groups</strong></a>
+    <li><a href="#email-addresses">Email addresses:</a>
       <ul>
-        <li><a href="#1-add-new-group"><strong>1. Add new Group</strong></a></li>
-        <li><a href="#2-create-group-permissions"><strong>2. Create Group Permissions</strong></a></li>
-        <li><a href="#3-edit-group-permissions"><strong>3. Edit Group Permissions</strong></a></li>
-        <li><a href="#4-manage-chart-group-permissions-1"><strong>4. Manage Chart Group Permissions</strong></a></li>
+        <li><a href="#assign-super-admin-permissions">Assign super admin permissions</a></li>
+        <li><a href="#group-permissions">Group permissions</a></li>
+        <li><a href="#direct-permissions">Direct permissions</a></li>
+        <li><a href="#3-edit-user-permissions">3. Edit User Permissions</a></li>
+      </ul>
+    </li>
+    <li><a href="#groups">Groups</a>
+      <ul>
+        <li><a href="#1-add-new-group">1. Add new Group</a></li>
+        <li><a href="#2-create-group-permissions">2. Create Group Permissions</a></li>
+        <li><a href="#3-edit-group-permissions">3. Edit Group Permissions</a></li>
+        <li><a href="#4-manage-chart-group-permissions">4. Manage Chart Group Permissions</a></li>
       </ul>
     </li>
   </ul>
@@ -311,7 +316,6 @@ if (!doNotTrack) {
 
 <h1>User Access</h1>
 
-<h2 id="usergroup-authorization">User/Group Authorization</h2>
 <p>  </p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -319,54 +323,136 @@ if (!doNotTrack) {
 </div>
 
 <p>  </p>
-<p>Authorization is used to determine what functions, data, or other parts of an application the user or the group has the access to.</p>
-<p>You can manage the <code>User</code> and <code>Group</code> access to Projects, Applications, Chart Groups, Environments, and Roles using the <code>User Access</code> feature.</p>
-<p><strong>View Access Levels/Role</strong></p>
-<p>There are four different view access levels/Role available for both <code>User</code> and <code>Group</code>, namely:</p>
-<ul>
-<li>
-<p><em><strong>View Only :</strong></em> User(s)/Group(s) can view only selected applications.</p>
-</li>
-<li>
-<p><em><strong>Build and Deploy :</strong></em> User(s)/Group(s) can build and deploy applications on selected environments.</p>
-</li>
-<li>
-<p><em><strong>Admin :</strong></em> User(s)/Group(s) can view trigger and edit selected applications.</p>
-</li>
-<li>
-<p><em><strong>Manager :</strong></em> User(s)/Group(s) can view, trigger and edit selected applications, can also manage user access.</p>
-</li>
-</ul>
-<p>To control the access of <code>User</code> and <code>Group</code>,<br>
-Go to the left main panel -&gt; Select <code>Global Configurations</code> -&gt; Select <code>User Access</code></p>
-<h2 id="users"><strong>Users</strong></h2>
-<h3 id="1-add-new-user"><strong>1. Add new user</strong></h3>
-<p>Click on <code>Add New User</code>, to add one or multiple users.</p>
+<p>Authorization is used to determine what functions, data, or other parts of an application the user or the group should have access to.</p>
+<p>You can manage the User and Group access to Projects, Applications, Chart Groups, Environments, and Roles using the User Access feature.</p>
+<p>To control the access of User and Group-</p>
+<p>Go to the left main panel -&gt; <code>Select Global Configurations</code> -&gt; Select <code>User Access</code></p>
+<h2 id="users">Users</h2>
+<h3 id="1-add-new-user">1. Add new user</h3>
+<p>Click on <code>Add User</code>, to add one or multiple users.</p>
 <p>  </p>
 <figure>
     <img src="../../user1.jpg" height="260px"/> 
 </figure>
 
 <p>  </p>
-<h3 id="2-create-user-permissions"><strong>2. Create User Permissions</strong></h3>
-<p>If you do not wish to give the users super admin permissions, then control their access in <code>Direct Permissions</code> section. Manage the project, Environment, Application and Role access given to the users.</p>
+<h3 id="2-create-user-permissions">2. Create User Permissions</h3>
+<p>When you click on Add User, you will see 5 options to set permission for users which are as follow:</p>
+<ul>
+<li>
+<p>Email addresses</p>
+</li>
+<li>
+<p>Assign super admin permissions</p>
+</li>
+<li>
+<p>Group permissions</p>
+</li>
+<li>
+<p>Direct permissions</p>
+<ul>
+<li>
+<p>Project</p>
+</li>
+<li>
+<p>Environment</p>
+</li>
+<li>
+<p>Applications</p>
+</li>
+<li>
+<p>Roles</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Chart group permissions</p>
+</li>
+</ul>
+<h2 id="email-addresses">Email addresses:</h2>
+<p>In the <code>Email address</code> box, you have to provide the mail ID of the user to whom you want to give access to your applications.</p>
+<h3 id="assign-super-admin-permissions">Assign super admin permissions</h3>
+<p>If you check the option <code>Assign super admin permissions</code>, the  user will get full access to your system and the rest of the options will disappear. The user with super admin permission can do anything whatever the user wants to do.</p>
 <p>  </p>
 <figure>
-    <img src="../../user3.jpg" height="450px"/> 
+    <img src="../../user_gc1.png" height="380px"/> 
 </figure>
 
 <p>  </p>
-<p>You can add multiple rows, for <code>Direct Permissions</code>.</p>
+<p>Click on <code>Save</code> and your user will be saved with super admin permissions.</p>
+<p>If you don’t want to assign super admin permissions then you have to provide the rest of the information.</p>
+<h3 id="group-permissions">Group permissions</h3>
+<p>The Group permissions section contains a drop-down of your created groups. This is optional. We will discuss how to create groups in the later section.</p>
+<h3 id="direct-permissions">Direct permissions</h3>
+<p>If you do not want to give the users super admin permissions, then control their access in the <code>Direct Permissions</code> section. In this section, you will see 4 options to manage the permissions of your users.</p>
+<ul>
+<li><strong>Project</strong></li>
+</ul>
+<p>Select a project from the drop-down to which you want to give permission to the users. You can select only one project at a time if you want to select more than one project then click <code>Add row</code>.</p>
+<ul>
+<li><strong>Environment</strong></li>
+</ul>
+<p>In the <code>Environment</code> section, you can select one or more than one or all environments at a time. Click on the environment section, you will see a drop-down of your environments and select any environment on which you want to give permission to the user.</p>
+<ul>
+<li><strong>Applications</strong></li>
+</ul>
+<p>Similarly, you can select <code>Applications</code> from the drop-down corresponding to your selected Environments. In this section, you can also give permissions to one or more than one or to all applications at a time.</p>
+<ul>
+<li>
+<p><strong>Roles</strong>
+Inside the <code>Role</code>, you actuallyhoose which type of permissions you want to give to the users.
+There are four different view access levels/Role available for both User and Group, namely:</p>
+<ul>
+<li><strong>View Only</strong>: User(s)/Group(s) can only view the selected applications.</li>
+<li><strong>Build and Deploy</strong>: User(s)/Group(s) under build &amp; deploy also have <code>View Only</code> permissions but apart from the view only permission they have the permission to trigger CI/CD pipelines of the applications of selected environments.</li>
+<li><strong>Admin</strong>: User(s)/Group(s) who have <code>Admin</code> permission can view, trigger, and edit selected applications.</li>
+<li><strong>Manager</strong>: User(s)/Group(s) under manager also have the <code>Admin</code> permissions but apart from that they can create, edit, and delete the selected applications, can also manage <code>User access</code> but the user can only give permissions on those applications which the user has access to.</li>
+</ul>
+</li>
+</ul>
+<p>  </p>
+<figure>
+    <img src="../../user3.jpg" height="260px"/> 
+</figure>
+
+<p>  </p>
+<p>You can add multiple rows, for Direct Permissions.</p>
 <p>Once you have finished assigning the appropriate permissions for the listed users, Click on <code>Save</code>.</p>
-<h3 id="3-edit-user-permissions"><strong>3. Edit User Permissions</strong></h3>
-<p>You can edit the user permissions, by clicking on the downward arrow.</p>
+<p>Chart group permissions</p>
+<p>You can also manage the access of users to Chart Groups in your project. This is optional, if you want to give permission regarding your helm charts in that case you can use it. By default, all users have the <code>View</code> permission of the charts.</p>
+<p>You can either give the users permission to <code>Create</code> or <code>Edit</code>.</p>
+<p>Click on the checkbox of <code>Create</code>, if you want the users to create, view, edit, or delete all the chart groups.</p>
+<p>  </p>
+<figure>
+    <img src="../../user4.jpg" height="380px"/> 
+</figure>
+
+<p>  </p>
+<p>Click on the checkbox of <code>Edit</code>, if you want to <code>allow</code> or <code>deny</code> users to edit the chart groups.</p>
+<p>Select on <code>Deny</code> option from the drop-down menu, if you want to restrict the users to edit the chart groups.</p>
+<p>  </p>
+<figure>
+    <img src="../../user5.jpg" height="380px"/> 
+</figure>
+
+<p>  </p>
+<p>Select the <code>Specific Charts</code> option from the drop-down menu, and then select the chart groups for which you want to allow users to edit, from the other drop-down menu.</p>
+<p>  </p>
+<figure>
+    <img src="../../user6.jpg" height="430px"/> 
+</figure>
+
+<p>  </p>
+<p>Click on <code>Save</code>, once you have configured all the required permissions for the users.</p>
+<h3 id="3-edit-user-permissions">3. Edit User Permissions</h3>
+<p>You can edit the user permissions, by clicking on the <code>downward arrow</code>.</p>
 <p>  </p>
 <figure>
     <img src="../../edit1.jpg" height="400px"/> 
 </figure>
 
 <p> </p>
-<p>You can then edit the user permissions here.</p>
+<p>Then you can edit the user permissions here.</p>
 <p>  </p>
 <figure>
     <img src="../../edit2.jpg" height="750px"/> 
@@ -375,36 +461,9 @@ Go to the left main panel -&gt; Select <code>Global Configurations</code> -&gt; 
 <p>  </p>
 <p>After you have done editing the user permissions. Click on <code>Save</code>.</p>
 <p>If you want to delete the user/users with particular permissions. Click on <code>Delete</code>.</p>
-<h3 id="4-manage-chart-group-permissions"><strong>4. Manage Chart Group Permissions</strong></h3>
-<p>You can also manage the access of users to Chart Groups in your project.</p>
-<p>You can either give the users permission to <code>Create</code> or <code>Edit</code>.</p>
-<p>Click on the check box of <code>Create</code>, if you want users to create, view, edit or delete chart groups.</p>
-<p>  </p>
-<figure>
-    <img src="../../user4.jpg" height="380px"/> 
-</figure>
-
-<p>  </p>
-<p>Click on the checkbox of <code>Edit</code>, if you want to allow or deny users to edit the chart groups.</p>
-<p>Select on <code>Deny</code> option from the drop-down menu, if you want to restrict the users to edit the chart groups.</p>
-<p>  
-<figure>
-    <img src="../../user5.jpg" height="380px"/> 
-</figure>
-</p>
-<p>  </p>
-<p>Select <code>Specific Charts</code> option from the drop-down menu, and then select the chart groups for which you want to allow users to edit, from the other drop-down menu.</p>
-<p>  </p>
-<figure>
-    <img src="../../user6.jpg" height="430px"/> 
-</figure>
-
-<p>  </p>
-<p>Once you have configured all the required permissions for the users, Click on <code>Save</code>.</p>
-<h2 id="groups"><strong>Groups</strong></h2>
-<p>The advantage of the groups is to define a set of privileges like create, edit or delete for the given set of resources that can be shared among the users within the group.
-Users can be added to an existing group to utilize the privileges that it grants.</p>
-<h3 id="1-add-new-group"><strong>1. Add new Group</strong></h3>
+<h2 id="groups">Groups</h2>
+<p>The advantage of the groups is to define a set of privileges like create, edit, or delete for the given set of resources that can be shared among the users within the group. Users can be added to an existing group to utilize the privileges that it grants. You can select the group which you are creating in the <code>Group permissions</code> section inside <code>Add users</code>.</p>
+<h3 id="1-add-new-group">1. Add new Group</h3>
 <p>Click on <code>Add Group</code>, to create a new group.</p>
 <p>  </p>
 <figure>
@@ -419,36 +478,36 @@ Users can be added to an existing group to utilize the privileges that it grants
 </figure>
 
 <p>  </p>
-<h3 id="2-create-group-permissions"><strong>2. Create Group Permissions</strong></h3>
+<h3 id="2-create-group-permissions">2. Create Group Permissions</h3>
 <p>Once you have given the group name and group description.</p>
-<p>Then, control the access permissions of groups in <code>Direct Permissions</code>section. Manage the project, Environment, Application and Role access given to the groups.</p>
+<p>Then, control the access permissions of groups in the Direct Permissions section. Manage the Project, Environment, Application, and Role access the same as we discuss in the above users section.</p>
 <p>  </p>
 <figure>
     <img src="../../user9.jpg" height="430px"/> 
 </figure>
 
 <p>  </p>
-<p>You can add multiple rows, for <code>Direct Permissions</code> section.</p>
+<p>You can add multiple rows, for the Direct Permissions section.</p>
 <p>Once you have finished assigning the appropriate permissions for the listed users, Click on <code>Save</code>.</p>
-<h3 id="3-edit-group-permissions"><strong>3. Edit Group Permissions</strong></h3>
-<p>You can edit the group permissions, by clicking on the downward arrow.</p>
+<h3 id="3-edit-group-permissions">3. Edit Group Permissions</h3>
+<p>You can edit the group permissions, by clicking on the <code>downward arrow</code>.</p>
 <p>  </p>
 <figure>
     <img src="../../edit4.jpg" height="440px"/> 
 </figure>
 
 <p>  </p>
-<p>You can then edit the user permissions here.</p>
+<p>Then you can edit the user permissions here.</p>
 <p>  </p>
 <figure>
     <img src="../../edit7.jpg" height="580px"/> 
 </figure>
 
 <p>  </p>
-<p>After you have done editing the group permissions. Click on <code>Save</code>.</p>
+<p>Once you are done editing the group permissions. Click on <code>Save</code>.</p>
 <p>If you want to delete the groups with particular permissions. Click on <code>Delete</code>.</p>
-<h3 id="4-manage-chart-group-permissions-1"><strong>4. Manage Chart Group Permissions</strong></h3>
-<p>The chart group permissions for the group will be managed in the same way as for the users. For reference, check <a href="/global_configurations/user_access/#5-manage-chart-group-permissions">Manage chart group permissions for users</a></p>
+<h3 id="4-manage-chart-group-permissions">4. Manage Chart Group Permissions</h3>
+<p>The chart group permissions for the group will be managed in the same way as for the users. For reference, check Manage chart group permissions for users.</p>
 
 
     

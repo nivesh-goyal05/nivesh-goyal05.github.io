@@ -300,23 +300,23 @@ if (!doNotTrack) {
 
 <h1>Environment Overrides</h1>
 
-<p>You will see all your environments associated with an application under the Environment Overrides section.</p>
+<p>You will see all your environments associated with an application under the <code>Environment Overrides</code> section.</p>
 <p>  </p>
 <figure>
     <img src="./env_ride.jpg" height="410px"/> 
 </figure>
 
 <p>  </p>
-<p>You can customize the Deployment template, ConfigMap, Secrets in Environment Overrides section to customize things according to multiple environments such as dev, test, integration, prod, etc.</p>
+<p>You can customize the <code>Deployment template, ConfigMap, Secrets</code> in Environment Overrides section to customize things according to multiple environments such as dev, test, integration, prod, etc.</p>
 <h2 id="deployment-template">Deployment template</h2>
-<p>If you want to deploy an application in a non-production environment and then in production env once testing is done in non-prod env, then you do not have to create a new application for prod env. Your existing pipeline(non-prod env) will work for both the environments with little customization in your deployment template under Environment overrides.</p>
+<p>If you want to deploy an application in a non-production environment and then in production env once testing is done in non-prod env, then you do not have to create a new application for prod env. Your existing pipeline(non-prod env) will work for both the environments with little customization in your deployment template under <code>Environment overrides</code>.</p>
 <h3 id="example-of-such-customization-requirement">Example of such customization requirement:</h3>
 <p>In a Non-production environment, you may have specified 100m CPU resources in the deployment template but in the Production environment you may want to have 500m CPU resources as the traffic on Pods will be higher than traffic on non-prod env.</p>
 <p>Configuring the Deployment template inside <code>Environment overrides</code> will not affect the other environments because <code>Environment Overrides</code> configure deployment template on environment bases. And at the time of deployment, it will always pick the overridden deployment template.</p>
-<p>The changed configuration will not be added in the template, instead, it will make a copy of the template and lets you customize it and then save it. And now this overridden template will be used for your other Environment.</p>
+<p>The changed configuration will not be added to the template, instead, it will make a copy of the template and lets you customize it, and then save it. And now this overridden template will be used for your other Environment.</p>
 <p>Click on <code>Allow Override</code> and make changes to your Deployment template and click on <code>Save</code> to save your changes of the Deployment template.</p>
 <h3 id="configmaps--secrets">ConfigMaps &amp; Secrets</h3>
-<p>The same goes for <code>ConfigMap</code> and <code>Secrets</code>. You can also create an environment-specific configmap and Secrets inside the Environment override section.</p>
+<p>The same goes for <code>ConfigMap</code> and <code>Secrets</code>. You can also create an environment-specific configmap and Secrets inside the <code>Environment override</code> section.</p>
 <p>If you want to configure your ConfigMap and secrets at the application level then you can provide them in <a href="/creating_application/config_maps/">ConfigMaps</a> and <a href="/creating_application/secrets/">Secrets</a>, but if you want to have environment-specific ConfigMap and secrets then provide them under the Environment override Section. At the time of deployment, it will pick both of them and provide them inside your cluster.</p>
 <p>Click on <code>Update ConfigMap</code> to update Configmaps.</p>
 <p>Click on <code>Update Secrets</code> to update Secrets.</p>

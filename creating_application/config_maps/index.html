@@ -354,13 +354,13 @@ if (!doNotTrack) {
 
 <p>  </p>
 <h4 id="1-data-type">1. Data Type</h4>
-<p>Select the Data Type as Kubernetes ConfigMap, if you wish to use the ConfigMap created by Devtron. You can select Kubernetes External ConfigMap if you have created a ConfigMap using the Kubectl command.</p>
-<p>By default, the data type is selected to Kubernetes ConfigMap.</p>
+<p>Select the Data Type as <code>Kubernetes ConfigMap</code>, if you wish to use the ConfigMap created by Devtron. You can select <code>Kubernetes External ConfigMap</code> if you have created a ConfigMap using the Kubectl command.</p>
+<p>By default, the data type is selected to <code>Kubernetes ConfigMap</code>.</p>
 <h4 id="2-name">2. Name</h4>
 <p>Provide a name to your configmap.</p>
 <h4 id="3-use-configmap-as">3. Use ConfigMap as</h4>
 <p>Here we are providing two options, one can select any of them as per the requirement</p>
-<p>-Environment Variable as part of your configMap or you want to  add Data Volume to your container using Config Map.</p>
+<p>-<code>Environment Variable</code> as part of your configMap or you want to  add <code>Data Volume</code> to your container using Config Map.</p>
 <ul>
 <li>Environment Variable</li>
 </ul>
@@ -368,10 +368,10 @@ if (!doNotTrack) {
 <ul>
 <li>Data Volume</li>
 </ul>
-<p>Select this option if you want to add Data Volume to your container using Config Map.</p>
-<p>Key-value pairs that you provide here, are provided as a file to the mount path. Your application will read this file as it reads the environment file.</p>
+<p>Select this option if you want to add <code>Data Volume</code> to your container using Config Map.</p>
+<p>Key-value pairs that you provide here, are provided as a file to the mount path. Your application will read this file as it reads the file.</p>
 <h4 id="4-data">4. Data</h4>
-<p>In the Data section, you provide your configmap in key-value pairs. You can provide one or more than one environment variable.</p>
+<p>In the <code>Data</code> section, you provide your configmap in key-value pairs. You can provide one or more than one environment variable.</p>
 <p>You can provide variables in two ways-</p>
 <ul>
 <li>
@@ -381,10 +381,10 @@ if (!doNotTrack) {
 <p>GUI (more user friendly)</p>
 </li>
 </ul>
-<p>Once you have provided the config, You can click on any option-YAML or GUI to view the key and Value parameters of the ConfigMap.</p>
-<p>Kubernetes ConfigMap using Environment Variable:</p>
-<p>If you select Environment Variable in 3rd option, then you can provide your environment variables in key-value pairs in the Data section using YAML or GUI.</p>
-<p>Data in YAML (please Check below screenshot)</p>
+<p>Once you have provided the config, You can click on any option-<code>YAML</code> or <code>GUI</code> to view the key and Value parameters of the ConfigMap.</p>
+<h5 id="kubernetes-configmap-using-environment-variable">Kubernetes ConfigMap using Environment Variable:</h5>
+<p>If you select <code>Environment Variable</code> in 3rd option, then you can provide your environment variables in key-value pairs in the <code>Data</code> section using <code>YAML</code> or <code>GUI</code>.</p>
+<p><code>Data in YAML</code> (please Check below screenshot)</p>
 <p>  </p>
 <figure>
     <img src="../../config2.jpg" height="830px"/> 
@@ -392,7 +392,7 @@ if (!doNotTrack) {
 
 <p>  </p>
 <p>Now, Click on <code>Save ConfigMap</code> to save your configmap configuration.</p>
-<p>Kubernetes ConfigMap using <code>Data Volume</code>:</p>
+<h5 id="kubernetes-configmap-using-data-volume">Kubernetes ConfigMap using <code>Data Volume</code>:</h5>
 <p>  </p>
 <figure>
     <img src="../../config2.jpg" height="830px"/> 
@@ -402,11 +402,11 @@ if (!doNotTrack) {
 <h2 id="volume-mount-path">Volume Mount Path</h2>
 <p>Provide the Volume Mount folder path in Volume Mount Path, a path where the data volume needs to be mounted, which will be accessible to the Containers running in a pod.</p>
 <p>You can add Configuration data as in YAML or GUI format as explained above.</p>
-<p>You can click on “YAML” or “GUI” to view the key and Value parameters of the ConfigMap that you have created.</p>
-<p>You can click on Save ConfigMap to save the configMap.</p>
+<p>You can click on <code>YAML</code> or <code>GUI</code> to view the key and Value parameters of the ConfigMap that you have created.</p>
+<p>You can click on <code>Save ConfigMap</code> to save the configMap.</p>
 <h2 id="kubernetes-external-configmap">Kubernetes External ConfigMap</h2>
-<p>Kubernetes External ConfigMap is created using the “kubectl create configmap” command. You can also use the ConfigMap generator in kustomization.yaml to create a ConfigMap.</p>
-<p>If you are using Kubernetes External ConfigMap, make sure you give the name of ConfigMap the same as the name that you have given using kubectl create Configmap <!-- raw HTML omitted --> <!-- raw HTML omitted --> command, otherwise, it might result in an error during the built.</p>
+<p>Kubernetes External ConfigMap is created using the <code>kubectl create configmap</code> command. You can also use the ConfigMap generator in <code>kustomization.yaml</code> to create a ConfigMap.</p>
+<p>If you are using <code>Kubernetes External ConfigMap</code>, make sure you give the name of ConfigMap the same as the name that you have given using kubectl create <code>Configmap &lt;configmap-name&gt; &lt;data source&gt;</code> command, otherwise, it might result in an error during the built.</p>
 <p>You have to ensure that the External ConfigMap exists and is available to the pod.</p>
 <p>  </p>
 <figure>
@@ -426,14 +426,15 @@ if (!doNotTrack) {
 </figure>
 
 <p>  </p>
+<p>Click on <code>Update Configmap</code> to update your configmap.</p>
 <h2 id="delete-configmap">Delete ConfigMap</h2>
-<p>You can delete your configmap. Click on your configmap and click on the delete sign to delete your configmap.</p>
+<p>You can delete your configmap. Click on your configmap and click on the <code>delete sign</code> to delete your configmap.</p>
 <p>  </p>
 <figure>
     <img src="../../delete_configmap.png" height="330px"/> 
 </figure>
 
-<h1 id="nbspnbsp">  </h1>
+<p>  </p>
 
 
     

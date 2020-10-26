@@ -325,7 +325,7 @@ if (!doNotTrack) {
 </figure>
 
 <p>One can have a single CD pipeline or multiple CD pipelines connected to the same CI Pipeline. A CD pipeline corresponds to one environment or in other words, an environment of an application can have only one CD pipeline. So images created by the CI pipeline can be deployed into multiple environments.</p>
-<p>If you already have one CD pipeline and want to add more, you can add them by clicking on the “+” sign and selecting the environment, where you want to deploy this application to. A new CD Pipeline will be created for the environment you selected.</p>
+<p>If you already have one CD pipeline and want to add more, you can add them by clicking on the <code>+</code> sign and selecting the environment, where you want to deploy this application to. A new CD Pipeline will be created for the environment you selected.</p>
 <p>CD pipeline configuration has below options to be configured:</p>
 <table>
 <thead>
@@ -353,7 +353,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td>Deployment Strategy</td>
-<td>Select the type of deployment strategy that you want to enable by clicking “Add Deployment Strategy”</td>
+<td>Select the type of deployment strategy that you want to enable by clicking <code>Add Deployment Strategy</code></td>
 </tr>
 <tr>
 <td>Post-deployment stage</td>
@@ -370,17 +370,17 @@ if (!doNotTrack) {
 <h3 id="1-pipeline-name">1. Pipeline Name</h3>
 <p>Inside the Pipeline name column, give a name to your Continuous deployment as per your understanding.</p>
 <h3 id="2-deploy-to-environment">2. Deploy to Environment</h3>
-<p>Select the environment where you want to deploy your application. Once you select the environment, it will display the Namespace corresponding to your selected environment automatically.</p>
+<p>Select the environment where you want to deploy your application. Once you select the environment, it will display the <code>Namespace</code> corresponding to your selected environment automatically.</p>
 <h3 id="3-pre-deployment-stage">3. Pre-deployment Stage</h3>
-<p>Sometimes you encounter a requirement where you have to Configure actions like DB migration, which you want to run before the deployment. The Pre-deployment Stage comes into the picture in such scenarios.</p>
+<p>Sometimes you encounter a requirement where you have to Configure actions like DB migration, which you want to run before the deployment. The <code>Pre-deployment Stage</code> comes into the picture in such scenarios.</p>
 <p>Pre-deployment stages can be configured to be executed automatically or manually.</p>
-<p>If you select automatic, Pre-deployment Stage will be triggered automatically after the CI pipeline gets executed and before the CD pipeline starts executing itself. But, if you select a manual, then you have to trigger your stage via console.</p>
-<p>And if you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can make use of Config Maps &amp; Secrets options.</p>
-<p>Config Maps can be used to define configuration files. And Secrets can be defined to keep the secret data of your application.</p>
+<p>If you select automatic, <code>Pre-deployment Stage</code> will be triggered automatically after the CI pipeline gets executed and before the CD pipeline starts executing itself. But, if you select a manual, then you have to trigger your stage via console.</p>
+<p>And if you want to use some configuration files and secrets in pre-deployment stages or post-deployment stages, then you can make use of <code>Config Maps</code> &amp; <code>Secrets</code> options.</p>
+<p><code>Config Maps</code> can be used to define configuration files. And <code>Secrets</code> can be defined to keep the secret data of your application.</p>
 <p>Once you are done defining Config Maps &amp; Secrets, you will get them as a drop-down in the pre-deployment stage and you can select them as part of your pre-deployment stage.</p>
-<p>These Pre-deployment CD / Post-deployment CD pods can be created in the deployment cluster or in the devtron build cluster. Running these pods in a Deployment cluster is recommended so that your scripts(if there are any) can interact with the cluster services which may not be publicly exposed.</p>
-<p>If you want to run it inside your application then you have to check the Execute in application Environment option else leave it unchecked.</p>
-<p>(** Make sure your cluster has devtron-agent installed if you Check the Execute in the application Environment option.)</p>
+<p>These <code>Pre-deployment CD / Post-deployment CD</code> pods can be created in the deployment cluster or in the devtron build cluster. Running these pods in a Deployment cluster is recommended so that your scripts(if there are any) can interact with the cluster services which may not be publicly exposed.</p>
+<p>If you want to run it inside your application then you have to check the <code>Execute in application Environment</code> option else leave it unchecked.</p>
+<p>(** Make sure your cluster has <code>devtron-agent</code> installed if you Check the <code>Execute in the application Environment</code> option.)</p>
 <p>  </p>
 <figure>
     <img src="./cd_pre_build.jpg" height="820px"/> 
@@ -391,7 +391,7 @@ if (!doNotTrack) {
 <p>We support two types of deployments- Manual and Automatic. If you select automatic, it will trigger your CD pipeline automatically once your corresponding CI pipeline has built successfully.</p>
 <p>If you have defined pre-deployment stages, then CD Pipeline will be triggered automatically after the successful build of your CI pipeline followed by the successful build of your pre-deployment stages. But if you select manual, then you have to trigger your deployment via console.</p>
 <h3 id="5-deployment-strategy">5. Deployment Strategy</h3>
-<p>Devtron&rsquo;s tool has 4 types of deployment strategies. Click on Add Deployment strategy and select from the available options. Options are:</p>
+<p>Devtron&rsquo;s tool has 4 types of deployment strategies. Click on <code>Add Deployment strategy</code> and select from the available options. Options are:</p>
 <p>(a) Recreate</p>
 <p>(b) Canary</p>
 <p>(c) Blue Green</p>
@@ -406,7 +406,7 @@ if (!doNotTrack) {
 </figure>
 
 <p>  </p>
-<p>You have configured the CD pipeline, now click on Create Pipeline to save it. You can see your newly created CD Pipeline on the Workflow tab attached to the corresponding CI Pipeline.</p>
+<p>You have configured the CD pipeline, now click on <code>Create Pipeline</code> to save it. You can see your newly created CD Pipeline on the Workflow tab attached to the corresponding CI Pipeline.</p>
 <p>  </p>
 <figure>
     <img src="./workflow-editor9.PNG" height="320px"/> 
@@ -428,7 +428,7 @@ if (!doNotTrack) {
 </figure>
 
 <p>  </p>
-<p>Make changes as per your requirement and click on Update Pipeline to update this CD Pipeline.</p>
+<p>Make changes as per your requirement and click on <code>Update Pipeline</code> to update this CD Pipeline.</p>
 <h2 id="delete-cd-pipeline">Delete CD Pipeline</h2>
 <p>If you no longer require the CD Pipeline, you can also Delete the Pipeline.</p>
 <p>To Delete a CD Pipeline, go to the App Configurations and then click on the Workflow editor. Now Click on the pipeline you want to delete. A pop will be displayed with CD details. Now click on the Delete Pipeline option to delete this CD Pipeline</p>

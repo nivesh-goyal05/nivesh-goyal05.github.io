@@ -323,26 +323,26 @@ if (!doNotTrack) {
 <p>We will discuss later how you will see the list of your found vulnerabilities.</p>
 <p> </p>
 <h2 id="policy">Policy</h2>
-<p>Vulnerabilities have different levels like Critical, Moderate, and Low. Users can define Policy according to the level of vulnerability. Users can also block the vulnerability or allow(whitelist) the vulnerability for their code.</p>
+<p>Vulnerabilities have different levels like Critical, Moderate, and Low. Users can define policy according to the level of vulnerability. Users can also block the vulnerability or allow(whitelist) the vulnerability for their code.</p>
 <p>If any vulnerability is found which is blocked by the user, then it will not deploy the application. And if it finds any vulnerability which is whitelisted by the user, then the build image can be deployed.</p>
 <p>The user gets informed in both cases if it finds any vulnerability or doesn&rsquo;t find any.</p>
 <p> </p>
 <p><strong>How to Check Vulnerability</strong></p>
 <p>You can find the Vulnerabilities <code>Build History</code> Page if you have enabled the <code>Scan for vulnerabilities</code> option.</p>
+<p>Your Application-&gt; Build History-&gt; Select pipeline-&gt; Go to Security  Tab.</p>
 <p> </p>
 <figure>
     <img src="./security-feature1.png" height="380px"/> 
 </figure>
 
 <p> </p>
-<p>Your Application-&gt; Build History-&gt; Select pipeline-&gt; Go to Security  Tab.</p>
 <p>Here you can see all the vulnerabilities found in the build image.</p>
 <p>Every vulnerability has <code>CVE ID</code>, <code>Severity Level</code>, Package, Current Version, and Fixed In Version.</p>
-<p><strong>CVE ID</strong>- Common vulnerability ID</p>
-<p><strong>Severity Level</strong> informs you about the severity of the vulnerability, it is defined as Critical, Medium, and Low.</p>
-<p>The <strong>Package</strong> column contains some meta-data of vulnerability.</p>
-<p>The <strong>Current Version</strong> is the version of that vulnerability</p>
-<p><strong>Fixed In Version</strong> column contains version name if it has been fixed in any version, else it remains blank</p>
+<p><strong>CVE ID</strong>- Common Vulnerability ID</p>
+<p><strong>Severity Level</strong>- informs you about the severity of the vulnerability, it is defined as Critical, Medium, and Low.</p>
+<p><strong>Package</strong>- column contains some meta-data of vulnerability.</p>
+<p><strong>Current Version</strong>- is the version of that vulnerability</p>
+<p><strong>Fixed In Version</strong>- column contains version name if it has been fixed in any version, else it remains blank</p>
 <p> </p>
 <p><strong>Find Vulnerabilities on the Trigger Page</strong></p>
 <p> </p>
@@ -370,7 +370,7 @@ if (!doNotTrack) {
 
 <p> </p>
 <h2 id="security">Security</h2>
-<p>You can check Vulnerabilities for all your applications in one place. On the Home page, there is an option named as <code>Security</code>. Here, you can see a list of applications under  the <code>Security Scan</code> tab. Here all the applications are listed which have the <code>Scan for Vulnerabilities</code> feature enabled. You can see the vulnerability count along with the Severity Level for all your applications.</p>
+<p>You can check Vulnerabilities for all your applications in one place. On the Home page, there is an option named  <code>Security</code>. Here, you can see a list of applications under  the <code>Security Scan</code> tab. Here all the applications are listed which have the <code>Scan for Vulnerabilities</code> feature enabled. You can see the vulnerability count along with the Severity Level for all your applications.</p>
 <p><strong>Note:-</strong></p>
 <p>It displays the “Vulnerability count and Severity Level” on a priority basis. And critical level has the highest priority, so it displays the critical level vulnerabilities and there counts if any application is having critical Vulnerability in it.</p>
 <p>You can directly <code>Search</code> your application  using the Search bar  or you can <code>filter out</code> your requirement  according to Severity, Clusters, and Environment.</p>
